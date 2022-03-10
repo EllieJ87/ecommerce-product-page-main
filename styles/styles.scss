@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/*
+- Very vark blue: hsl(220, 13%, 13%)
+- Dark grayish blue: hsl(219, 9%, 45%)
+- Grayish blue: hsl(220, 14%, 75%)
+- Light grayish blue: hsl(223, 64%, 98%)
+- White: hsl(0, 0%, 100%)
+- Black (with 75% opacity for lightbox background): hsl(0, 0%, 0%)
+*/
+
+// COLOUR //
+$Orange: #FF7D1A;
+$Pale_Orange: #FFEDE0;
+$Dark_Navy: #1D2025;
+$Deep_Grey_Blue: #68707D;
+$Grey_Blue: #B6BCC8;
+$Light_Grey_Blue: #F7F8FD;
+$White: #FFFFFF;
+$Black_Alpha: rgba(0,0,0,0.75);
+
+// MIXINS //
+@mixin maincontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+@mixin fontitalic {
+    font-style: italic;
+}
+
+@mixin fontbold {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+@mixin bolditalic {
+    font-weight: bold;
+    font-style: italic;
+}
+
+@mixin inlinemiddle{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@mixin nopadding {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;    
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    background-color: white;
+    color: black;
+    font-size: 1em;
+}
+
+.navbar {
+    border-bottom: 3px solid green;
+}
+
+.fa-solid:before {
+    content: '\f2ed';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 1em; 
+    color: orange;
+}
+
+.fa:before {
+    font-family: 'Font Awesome 5 Free';
+    font-size: 2em; 
+    color: orange;
+}
+
+.bi {
+    font-size: 2em; 
+    color: orange;
+}
+
+
+.container-fluid {
+    padding: 0;
+}
+// NAV BAR //
+
+#avatar {
+    height: 40px;
+}
+
+#header-img {
+    margin-left: 30px;
+    width: 100px;
+    height: auto;
+}
+
+.nav-link {
+    color: black;
+    font-size: 1em;
+    @include fontitalic;
+    text-decoration: none;
+    overflow: hidden;
+    background: -webkit-gradient(linear, left top, right top, from(orange), color-stop(50%, orange), color-stop(50%, black ));
+    background: linear-gradient(to right, orange, orange 50%, black 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    -webkit-transition: background-position 275ms ease;
+    transition: background-position 275ms ease;
+}
+  
+.nav-link:hover {
+    background-position: 0 100%;
+    font-weight: bold;
+}
+
+.navbar {
+    padding-top: 20px;
+    padding-right: 30px;
+}
+
+.nav-item {
+    padding-right: 20px;
+}
+
+/* Color of the navbar BEFORE scroll */
+.navbar-scroll {
+    background-color: black;
+    text-align: end;
+}
+
+/* An optional height of the navbar AFTER scroll */
+.navbar.navbar-scroll.navbar-scrolled {
+  padding-top: auto;
+  padding-bottom: auto;
+}
+
+#bars {
+    font-size: 1.5em;
+    color: black;
+}
+
+section {
+    padding-top: 115px;
+}
+
+h1 {
+    font-weight: bold;
+    text-align: center;
+}
+
+p {
+    // line-height: 2;
+    // text-align: center;
+    padding: 0 20px;
+}
+
+// p:first-of-type {
+//     @include bolditalic;
+//     color: black;
+//     font-size: 1em;
+// }
+
+h4 {
+    @include bolditalic;
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 8px whitesmoke;
+}
+
+.title-h1 {
+    font-size: 4em;
+}
+
+#title-p {
+    color: black;
+    @include bolditalic;
+    font-size: 2em;
+}
+
+.span-text {
+    font-weight: bold;
+    color: black;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    padding: 0 20px;
+}
+
+// PROJECTS //
+.product-image-container {
+    padding: 0;
+}
+
+.product-image {
+    border-radius: 10px;
+}
+
+.thumbnail-images {
+    display: flex;
+    height: 88px;
+}
+
+h3 {
+    font-weight: bold;
+    @include fontitalic;
+}   
+
+.opacity-hover:hover {
+    opacity: 0.5;
+}
+
+@media (min-width: 1440px) {
+    // Bottom border to be only on larger screens and to not be full width //
+    .navbar {
+        border-bottom: 3px solid green;
+        max-width: auto;
+    }
+
+}
+
+
+@media (max-width: 576px) {  
+
+    .title-h1 {
+        font-size: 2.5em;
+    }
+    
+    #title-p {
+        font-size: 1.5em;
+    }
+
+    .span-text {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-links {
+        display: flex;
+        flex-direction: column;
+    }
+
+    a.fa {
+        padding: 0 0 20px 0;
+        font-size: 1.5em;
+    }
+    
+    .contact-text {
+        padding: 0 0 0 10px;
+    }
+
+    // FOOTER //
+    footer {
+        font-size: 0.7em;
+    }
+}
+
+@media (min-width: 280px) and (max-width: 823px) and (orientation: landscape) {
+    a.fa {
+        font-size: 1.5em;
+    }
+
+    // FOOTER //
+    footer {
+        font-size: 0.7em;
+    }
+}

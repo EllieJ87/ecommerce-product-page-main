@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/*
+- Very vark blue: hsl(220, 13%, 13%)
+- Dark grayish blue: hsl(219, 9%, 45%)
+- Grayish blue: hsl(220, 14%, 75%)
+- Light grayish blue: hsl(223, 64%, 98%)
+- White: hsl(0, 0%, 100%)
+- Black (with 75% opacity for lightbox background): hsl(0, 0%, 0%)
+*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  background-color: white;
+  color: black;
+  font-size: 1em;
+}
+
+.navbar {
+  border-bottom: 3px solid green;
+}
+
+.fa-solid:before {
+  content: '\f2ed';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 1em;
+  color: orange;
+}
+
+.fa:before {
+  font-family: 'Font Awesome 5 Free';
+  font-size: 2em;
+  color: orange;
+}
+
+.bi {
+  font-size: 2em;
+  color: orange;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+#avatar {
+  height: 40px;
+}
+
+#header-img {
+  margin-left: 30px;
+  width: 100px;
+  height: auto;
+}
+
+.nav-link {
+  color: black;
+  font-size: 1em;
+  font-style: italic;
+  text-decoration: none;
+  overflow: hidden;
+  background: -webkit-gradient(linear, left top, right top, from(orange), color-stop(50%, orange), color-stop(50%, black));
+  background: linear-gradient(to right, orange, orange 50%, black 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  -webkit-transition: background-position 275ms ease;
+  transition: background-position 275ms ease;
+}
+
+.nav-link:hover {
+  background-position: 0 100%;
+  font-weight: bold;
+}
+
+.navbar {
+  padding-top: 20px;
+  padding-right: 30px;
+}
+
+.nav-item {
+  padding-right: 20px;
+}
+
+/* Color of the navbar BEFORE scroll */
+.navbar-scroll {
+  background-color: black;
+  text-align: end;
+}
+
+/* An optional height of the navbar AFTER scroll */
+.navbar.navbar-scroll.navbar-scrolled {
+  padding-top: auto;
+  padding-bottom: auto;
+}
+
+#bars {
+  font-size: 1.5em;
+  color: black;
+}
+
+section {
+  padding-top: 115px;
+}
+
+h1 {
+  font-weight: bold;
+  text-align: center;
+}
+
+p {
+  padding: 0 20px;
+}
+
+h4 {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 8px whitesmoke;
+}
+
+.title-h1 {
+  font-size: 4em;
+}
+
+#title-p {
+  color: black;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 2em;
+}
+
+.span-text {
+  font-weight: bold;
+  color: black;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  padding: 0 20px;
+}
+
+.product-image-container {
+  padding: 0;
+}
+
+.product-image {
+  border-radius: 10px;
+}
+
+.thumbnail-images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 88px;
+}
+
+h3 {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.opacity-hover:hover {
+  opacity: 0.5;
+}
+
+@media (min-width: 1440px) {
+  .navbar {
+    border-bottom: 3px solid green;
+    max-width: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .title-h1 {
+    font-size: 2.5em;
+  }
+  #title-p {
+    font-size: 1.5em;
+  }
+  .span-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  .contact-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  a.fa {
+    padding: 0 0 20px 0;
+    font-size: 1.5em;
+  }
+  .contact-text {
+    padding: 0 0 0 10px;
+  }
+  footer {
+    font-size: 0.7em;
+  }
+}
+
+@media (min-width: 280px) and (max-width: 823px) and (orientation: landscape) {
+  a.fa {
+    font-size: 1.5em;
+  }
+  footer {
+    font-size: 0.7em;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
