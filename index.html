@@ -21,113 +21,117 @@
   
   </head>
   <body>
-    <div class="container">
+    <div class="container-fluid">
       
-      <header id="header">
-        <nav class="navbar navbar-expand-md fixed-top">
-          <div class="container">
-            <button id="toggle" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-              <i id="bars" class="fa fa-bars"></i>
-            </button>
-            <a class="navbar-brand" href="#">
-              <img src="images/logo.svg" alt="logo" id="header-img" class="d-inline-block img-fluid">
-            </a>
-            
-            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-              <div class="offcanvas-header">
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      <nav class="navbar navbar-expand-md fixed-top">
+        <div class="container-md navbar-container">
+          <button id="toggle" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <i id="bars" class="fa fa-bars"></i>
+          </button>
+          <img src="images/logo.svg" alt="logo" id="header-img" class="d-inline-block img-fluid">
+          
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <button id="close-btn" type="button" data-bs-dismiss="offcanvas" aria-label="Close"><i id="bars" class="fa fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Collections</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Men</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Women</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="navbar-cart">
+            <i class="bi bi-cart3 nav-cart"></i>
+            <img src="images/image-avatar.png" alt="avatar" id="avatar">
+          </div>
+        </div>
+      </nav>
+      
+      <section id="product" class="container-md">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="product-image-container">
+              <img src="images/image-product-1.jpg" alt="product-one" class="img-fluid product-image">
+            </div>
+            <div class="thumbnail-images">
+              <div class="col-3">
+                <img src="images/image-product-1-thumbnail.jpg" alt="product-one" class="img-thumbnail product-image">
               </div>
-              <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Collections</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Men</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Women</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                  </li>
-                </ul>
+              <div class="col-3">
+                <img src="images/image-product-2-thumbnail.jpg" alt="product-one" class="img-thumbnail product-image">
+              </div>
+              <div class="col-3">
+                <img src="images/image-product-3-thumbnail.jpg" alt="product-one" class="img-thumbnail product-image">
+              </div>
+              <div class="col-3">
+                <img src="images/image-product-4-thumbnail.jpg" alt="product-one" class="img-thumbnail product-image">
               </div>
             </div>
-
           </div>
-          <div>
-            <i class="bi bi-cart3"></i>
-            <img src="images/image-avatar.png" alt="avatar" id="avatar" class="d-inline-block img-fluid">
-          </div>
-        </nav>
-      </header>
-      
-      <section id="product" class="product">
-        <div class="container-lg">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="product-image-container">
-                <img src="images/image-product-1.jpg" alt="product-one" class="img-fluid product-image">
+          
+          <div class="col-md-6">
+            <div class="product-tile">
+              <div class="product-header">
+                <p>Sneaker Company</p>
+                <h3>Fall Limited Edition Sneakers</h3>
               </div>
-              <div class="thumbnail-images">
-                <img src="images/image-product-1-thumbnail.jpg" alt="product-one" class="img-fluid product-image">
-                <img src="images/image-product-2-thumbnail.jpg" alt="product-one" class="img-fluid product-image">
-                <img src="images/image-product-3-thumbnail.jpg" alt="product-one" class="img-fluid product-image">
-                <img src="images/image-product-4-thumbnail.jpg" alt="product-one" class="img-fluid product-image">
-              </div>
-            </div>
-            
-            <div class="col-md-6">
-              <div class="product-tile">
-                <div class="product-header">
-                  <p>Sneaker Company</p>
-                  <h3>Fall Limited Edition Sneakers</h3>
-                </div>
-                <div class="product-body">
-                  <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.
-                  </p>
-                  
-                  <span>
-                    <h2>$125.00</h2>
-                    <span>
-                      <p>50%</p>
-                    </span>
-                  </span>
-                  <p>$250.00</p>
-                  
-                  <div>
-                    <span>
-                      <button>
-                        <i class="fa fa-regular fa-minus"></i>
-                      </button>
-                      <span>0</span>
-                      <button>
-                        <i class="fa fa-regular fa-plus"></i>
-                      </button>
-                    </span>
-                    <button></button><i class="bi bi-cart3"></i>Add to cart</button>
-                  </div>
+              <div class="product-body">
+                <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.
+                </p>
                 
+                <span>
+                  <h2>$125.00</h2>
+                  <span>
+                    <p>50%</p>
+                  </span>
+                </span>
+                <p>$250.00</p>
+                
+                <div>
+                  <span>
+                    <button class="btn fa fa-regular fa-minus"></button>
+                    <span>0</span>
+                    <button class="btn fa fa-regular fa-plus"></button>
+                  </span>
+                  <button class="btn btn-secondary"><i class="bi bi-cart3"></i>Add to cart</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <footer class="container-fluid">
+        <div class="row">
+            <div class="col-sm footer-links">
+                <a href="https://www.linkedin.com/in/ellie-judge-45b00689/" class="bi bi-linkedin" aria-hidden="true" target="_blank"></a>
+                <a href="https://github.com/EllieJ87" class="bi bi-github" aria-hidden="true" target="_blank"></a> 
+            </div>
+            <div class="col-sm">
+              <span class="footer-text">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.  Coded by Ellie Judge &copy;2022</span>
+            </div>
+        </div>
+      </footer>
+            
     </div>
     
     <!--<i class="fa fa-solid fa-trash-can"></i>
     <i class="fa fa-regular fa-angle-left"></i>
     <i class="fa fa-regular fa-angle-right"></i>-->
-    
-    <!--<div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-    </div>-->
     
     <!-- JQUERY & BOOTSTRAP.JS CDNS FILES -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
