@@ -12,6 +12,16 @@ $White: #FFFFFF;
 $Black: #000000;
 $Black_Alpha: rgba(0,0,0,0.75);
 
+// Dimension Spacing //
+$ZeroPX: 0;
+$TenPX: 10px;
+$TwentyPX: 20px;
+
+// weights //
+$RegularEM: 1em;
+$MediumEM: 0.8em;
+$SmallEM: 0.7em;
+
 @mixin Hover-Underline {
     color: $Dark_Navy;
     border-bottom: 3px solid $Orange;    
@@ -22,17 +32,35 @@ $Black_Alpha: rgba(0,0,0,0.75);
     padding-right: 0;
 }
 
+@mixin PadMarginZero {
+    padding: 0;
+    margin: 0;
+}
+
+@mixin FlexCenterAlign {
+    display: flex;
+    align-items: center;
+}
+
+@mixin FlexAlignCenSB {
+    @include FlexCenterAlign;
+    justify-content: space-between;
+}
+
+@mixin FlexCenterSelf {
+    display: flex; 
+    align-self: center;
+}
+
 * {
     box-sizing: border-box;
     font-family: 'Kumbh Sans', sans-serif;
 }
 
 body { 
-    padding: 0;
-    margin: 0;
+    @include PadMarginZero();
     background-color: $White;
     color: $Black;
-    font-size: 1em;
     display: flex;
     width: 100vw;
     height: 100vh;    
@@ -43,68 +71,58 @@ body {
 // NAVBAR //
 .navbar {
     background-color: $White;
-    padding-top: 20px;
+    padding-top: $TwentyPX;
 }
 
-.navbar-container {
-    border-bottom: 1px solid $Deep_Grey_Blue;
-}
+.navbar-container { border-bottom: 1px solid $Deep_Grey_Blue; }
 
 #header-img {
     width: 100px;
     height: auto;
-    padding-bottom: 20px;
+    padding-bottom: $TwentyPX;
 }
 
 // NAV LINKS //
-.navbar-nav {
-    padding-left: 30px;
-}
+.navbar-nav { padding-left: 30px; }
 
-.nav-item {
-    padding-right: 10px;
-}
+.nav-item { padding-right: $TenPX; }
 
 .nav-link {
     color: $Deep_Grey_Blue;
-    font-size: 0.8em;
-    padding-bottom: 20px;
+    font-size: $MediumEM;
+    padding-bottom: $TwentyPX;
 }
   
 .nav-link:hover {
     font-weight: 700;
-    @include Hover-Underline;
-    padding-bottom: 20px;
+    @include Hover-Underline();
+    padding-bottom: $TwentyPX;
 }
 
 // NAVBAR CART //
-.navbar-cart {
-    display: flex;
-    align-items: center;
-}
+.navbar-cart { @include FlexCenterAlign(); }
 
 .nav-cart {
     color: $Dark_Navy;
-    padding-right: 15px;
-    padding-bottom: 20px;
+    padding: 0 15px 20px 0;
 }
 
 #avatar {
     height: 50px;
-    padding-bottom: 20px;
+    padding-bottom: $TwentyPX;
 }
 
 .fa-trash-can:before {
     content: '\f2ed';
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
-    font-size: 1em; 
+    font-size: $RegularEM; 
     color: $Orange;
 }
 
 // MOBILE NAV // 
 #bars {
-    font-size: 0.7em;
+    font-size: $SmallEM;
     color: $Dark_Navy;
 }
 
@@ -116,7 +134,7 @@ body {
 .fa-xmark:before {
     content: '\f00d';
     font-family: 'Font Awesome 5 Free';
-    font-size: 1em; 
+    font-size: $RegularEM; 
     color: $Dark_Navy;
 }
 
@@ -126,9 +144,7 @@ body {
     overflow-x: hidden;
 }
 
-.offcanvas-backdrop.show {
-    opacity: .8;
-}
+.offcanvas-backdrop.show { opacity: .8; }
 
 // MAIN CONTENT //
 #product {
@@ -137,71 +153,119 @@ body {
 }
 
 // MAIN PRODUCT IMAGES //
-.product-image-container, .col-3 {
-    padding-left: 10px;
-    padding-right: 10px;
-}
+.product-image-container, .col-3 { padding: 0 10px; }
 
-.toggle-buttons {
-    display: none;
-}
+#main-img { cursor: pointer; }
+
+.toggle-buttons { display: none; }
 
 .product-image {
-    border-radius: 20px;
+    border-radius: $TwentyPX;
+    cursor: pointer;
 }
 
 // THUMBNAIL PRODUCT IMAGES //
-.thumbnail-images {
+.thumbnail-container {
     display: inline-flex;
-    margin-top: 20px;
+    margin-top: $TwentyPX;
 }
 
-.image-container {
+// is this needed?
+.thumbnail-image-container {
     position: relative;
     box-sizing: border-box;
-    border-radius: 20px;
-    cursor: pointer
 }
-
+//
+// is this needed?
 .img-thumbnail {
     border: none;
-    padding: 0;
+    padding: $ZeroPX;
 }
 
-.product-thumbnail {
+.thumbnail {
+    cursor: pointer;
     display: block;
-    border-radius: 20px;
+    border-radius: $TwentyPX;
 }
 
-.img-thumbnail:hover {
-    box-shadow: 0px 0px 0px 3px $Orange_Alpha; 
+.thumbnail:hover {
     opacity: 0.5;
     box-sizing: border-box;
-    background-color: transparent;
-}
-
-// THUMBNAIL OVERLAY // 
-.thumbnail-images .image-container:hover>.product-thumbnail {
-    outline: none;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: 1;
-    border-radius: 20px;
-    transition: .1s ease;
-    box-sizing: border-box;
-}
-
-.image-container:hover .overlay {
-    box-sizing: border-box;
     background-color: rgba(255, 255, 255, 0.75);
-    border: 0.2em solid $Orange;
+    border: 3px solid $Orange;
+}
+
+.active {
+    opacity: 0.5;
+    background-color: rgba(255, 255, 255, 0.75);
+    border: 3px solid $Orange;
+}
+
+// -- LIGHT BOX -- //
+#lightbox {
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.75);
+    display: none;
+}
+
+#lightbox.lgbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lgBoxContainer {
+    max-width: 70vw;
+    max-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lgbox-thumbnail-image-container {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.lgbox-thumbnail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+.main-img {
+    max-width: 60%;
+    max-height: 60%;
     border-radius: 20px;
+}
+
+.toggle-buttons {
+    z-index: 1;
+    position: absolute;
+    max-width: 70vw;
+    width: 650px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fa-angle-left, .fa-angle-right {
+    background-color: White;
+    border-radius: 50%;
+    padding: 10px 14px;
+    cursor: pointer;
+}
+
+.fa-angle-left, .fa-angle-right {
+    display: inline-block;
 }
 
 // PRODUCT INFORMATION //
@@ -214,44 +278,42 @@ body {
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 0.1em;
-    font-size: 0.8em;
-    margin: 0;
-    padding-bottom: 20px;
-    font-size: 1em;
+    margin: $ZeroPX;
+    padding-bottom: $TwentyPX;
+    font-size: $RegularEM;
 }
 
 .product-name {
     font-weight: 700;
-    padding-bottom: 20px;
+    padding-bottom: $TwentyPX;
     font-size: 2.5em;
 }
 
 .product-info {
     color: $Deep_Grey_Blue;
-    font-size: 0.9em;
-    padding-bottom: 20px;
+    font-size: $RegularEM;
+    padding-bottom: $TwentyPX;
     line-height: 2;
 }
 
 .price-container {
-    display: flex;
-    align-items: center;
+    @include FlexCenterAlign();
     padding-bottom: 5px;
 }
 
 .new-price {
     color: $Dark_Navy;
     font-weight: 700;
-    padding-right: 10px;
-    margin: 0;
+    padding-right: $TenPX;
+    margin: $ZeroPX;
 }
 
 .reduced-percent {
-    margin: 0;
+    margin: $ZeroPX;
     background-color: $Pale_Orange;
-    padding: 2px 8px;
+    padding: 5px 10px;
     border-radius: 6px;
-    font-size: 0.8em;
+    font-size: $MediumEM;
     font-weight: 700;
     color: $Orange;
 }
@@ -259,62 +321,53 @@ body {
 .old-price {
     color: $Grey_Blue;
     font-style: italic;
-    font-size: 0.9em;
+    font-size: $MediumEM;
     text-decoration: line-through;
-    padding-bottom: 20px;
+    padding-bottom: $TwentyPX;
 }
 
-.col-lg-4, .col-lg-8 {
-    padding: 0;
-    margin: 0;
-}
+.col-lg-4, .col-lg-8 { @include PadMarginZero(); }
 
 .quantity-button {
-    background-color: $Light_Grey_Blue;
-    display: flex;
     height: 50px;
-    justify-content: space-between;
-    border-radius: 10px;
-    align-items: center;
+    background-color: $Light_Grey_Blue;
+    @include FlexAlignCenSB();
+    border-radius: $TenPX;
     margin-right: 5px;
 }
 
 .fa-minus, .fa-plus {
     background-color: transparent;
     border: none;
-    padding: 0;
+    padding: $ZeroPX;
     color: $Orange;
 } 
 
-.fa-minus {
-    padding-left: 20px;
-} 
+.fa-minus { padding-left: $TwentyPX; } 
 
-.fa-plus {
-    padding-right: 20px;
-} 
+.fa-plus { padding-right: $TwentyPX; } 
 
 .quantity-num {
     color: $Dark_Navy;
     font-weight: 700;
-    font-size: 1em;
+    font-size: $RegularEM;
 }
 
 .cart-button {
     background-color: $Orange;
     display: block;
-    padding: 0;
+    padding: $ZeroPX;
     width: 100%;
     height: 50px;
-    border-radius: 10px;
+    border-radius: $TenPX;
     color: $White;
-    font-size: 1em;
+    font-size: $RegularEM;
     margin-left: 5px;
 }
 
 .cart-icon {
     color: $White;
-    padding-right: 10px;
+    padding-right: $TenPX;
 }
 
 .cart-button:hover {
@@ -323,29 +376,26 @@ body {
     font-weight: 700;
 }
 
-.cart-icon:hover {
-    font-weight: bold;
-}
+.cart-icon:hover { font-weight: bold; }
 
 // FOOTER // 
 footer {
     align-content: center;
     position: fixed;
-    bottom: 0;
-    left: 0;
-    padding-bottom: 15px;
+    bottom: $ZeroPX;
+    left: $ZeroPX;
+    padding-bottom: $TwentyPX;
 }
 
 .footer-text {
-    display: flex; 
-    align-self: center;
+    @include FlexCenterSelf();
     justify-content: flex-end; 
     padding-right: 50px;
 }
 
 .copyright-footer {
     color: $Grey_Blue;
-    font-size: 0.7em;
+    font-size: $SmallEM;
 }
 
 .copyright-footer > a {
@@ -359,8 +409,7 @@ footer {
 }
 
 .footer-links {
-    display: flex;
-    align-self: center;
+    @include FlexCenterSelf();
     justify-content: flex-start; 
     padding-left: 50px;
 }
@@ -369,12 +418,12 @@ footer {
     font-size: 1.2em;
     color: $Grey_Blue;
     text-decoration: none;
-    margin-right: 20px;
+    margin-right: $TwentyPX;
 }
 
 .bi-linkedin:hover {
     @include Hover-Underline;
-    padding: 0;
+    padding: $ZeroPX;
 }
 
 .bi-github {
@@ -385,84 +434,52 @@ footer {
 
 .bi-github:hover {
     @include Hover-Underline;
-    padding: 0;
+    padding: $ZeroPX;
 }
 
 // MEDIA QUERIES //
 @media (max-width: 991px) {
     
     // MAIN PRODUCT IMAGES //
-    .product-image-container {
-        padding-bottom: 5px;
-    }
+    .product-image-container { padding-bottom: $TenPX; }
     
-    .col-3 {
-        padding: 0 5px;
-        margin-bottom: 15px;
-    }
+    .col-3 { margin-bottom: 15px; }
 
-    .thumbnail-images {
-        margin-top: 5px;
-    }
+    .thumbnail-container { margin-top: 5px; }
 
-    .product-information-container{
-        padding: 0 15px;
-    }
+    .product-information-container{ padding: 0 20px; }
     
-    .header-title {
-        padding: 10px;        
-        font-size: 0.9em;
-    }
+    .header-title { padding: $TenPX; }
     
-    .product-name {
-        font-size: 1.8em;
-    }
+    .product-name { font-size: 1.8em; }
     
     .product-name, .product-info, .price-container, .old-price {
         padding: 5px 10px;
     }
     
-    .new-price {
-        font-size: 1.6em;
-    }
+    .new-price { font-size: 1.6em; }
     
-    .old-price {
-        font-size: 0.8em;
-    }
+    .old-price { font-size: $MediumEM; }
 
-    .quantity-button {
-        margin-right: 0;
-    }
+    .quantity-button { margin-right: $ZeroPX; }
     
-    .cart-button {
-        margin-left: 0;
-    }
+    .cart-button { margin-left: $ZeroPX; }
     
     footer {
         position: relative;
         padding-top: 50px;
     }
 
-    .footer-text {
-        padding-right: 10px;
-    }
+    .footer-text { padding-right: $TenPX; }
     
-    .footer-links {
-        padding-left: 10px;
-    }
+    .footer-links { padding-left: $TenPX; }
 }
 
 @media (max-width: 796px) {
 
-    .quantity-button {
-        margin-right: 0;
-        margin-bottom: 5px;
-    }
+    .quantity-button { margin: 0 0 5px 0; }
     
-    .cart-button {
-        margin-left: 0;
-        margin-top: 5px;
-    }
+    .cart-button { margin: 5px 0 0 0 ; }
 }
 
 @media (max-width: 576px) {  
@@ -472,100 +489,72 @@ footer {
         height: 50px;
     }
 
-    .mobile-nav {
-        display: flex;
-        align-items: center;
-    }
+    .mobile-nav { @include FlexCenterAlign(); }
 
     .navbar-container {
         border-bottom: none;
-        padding: 0;  
+        padding: $ZeroPX;  
     }
 
-    #header-img {
-        padding-bottom: 0;
-        width: max-content;
-        height: auto;
-    }
-
-    #bars {
-        font-size: 0.7em;
-        color: $Dark_Navy;
-    }
+    #header-img { padding-bottom: $ZeroPX; }
     
     #avatar {
         height: 30px;
-        padding-bottom: 0;
-        padding-right: 20px;
+        padding-bottom: $ZeroPX;
+        padding-right: $TwentyPX;
     }
 
-    .nav-cart {
-        padding-right: 20px;
-    }
+    .nav-cart { padding-right: $TwentyPX; }
     
-    .navbar-nav {
-        padding-left: 10px;
-    }
+    .navbar-nav { padding-left: $TenPX; }
 
     .nav-link {
         font-weight: bold;
         color: $Black;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding: 10px 0;
     }
 
-    .fa-xmark {
-        padding-top: 20px;
-    }
+    .fa-xmark { padding-top: $TwentyPX; }
     
-    .nav-cart {
-        padding-bottom: 0;
-    }
+    .nav-cart { padding-bottom: $ZeroPX; }
     
-    .thumbnail-images {
-        display: none
-    }
+    .thumbnail-container { display: none }
 
     #product {
         margin-top: 50px;
-        padding: 0;
+        padding: $ZeroPX;
     }
+
+    .row { overflow-x: hidden; }
 
     // MAIN PRODUCT IMAGES //
     .product-image-container {
         @include NoPadLeftRight;
         width: 100vw;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        @include FlexCenterAlign();
         justify-content: center;
-        align-items: center;
     }
 
     .toggle-buttons {
         z-index: 1;
         position: absolute;
         width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-left: 20px;
-        padding-right: 20px;
+        @include FlexAlignCenSB();
+        padding: 0 20px;
     }
     
     .fa-angle-left, .fa-angle-right {
         background-color: $White;
         border-radius: 50%;
-        padding: 10px 14px;
+        padding: 10px 15px;
+        cursor: pointer;
     }
     
     .fa-angle-left, .fa-angle-right {
         display: inline-block;
     }
     
-    .product-image {
-        border-radius: 0;
-    }
+    .product-image { border-radius: $ZeroPX; }
    
     .product-button {
         display: flex;
@@ -573,76 +562,54 @@ footer {
     }
     
     footer {
-        font-size: 0.9em;
+        font-size: $MediumEM;
         position: relative;
     }
 
-    .footer-text  {
-        justify-content: center;
-        padding: 5px;
-    }
-
-    .footer-links {
+    .footer-text, .footer-links {
         justify-content: center;
         padding: 5px;
     }
 }
 
 @media (min-width: 820px) and (max-width: 1180px) {
-    .product-information-container{
-        padding: 0;
-    }
+    .product-information-container { padding: $ZeroPX; }
 }
 
 @media (min-width: 600px) and (max-width: 1024px) and (orientation: landscape) {
     footer {
         position: relative;
-        margin-top: 25px;
+        margin-top: $TwentyPX;
     }
 }
 
 @media (min-width: 912px) and (max-width: 1368px) and (orientation: landscape) {
-    .quantity-button {
-        margin-right: 0;
-    }
+    .quantity-button { margin-right: $ZeroPX; }
     
-    .fa-minus {
-        padding-left: 10px;
-    } 
+    .fa-minus { padding-left: $TenPX; } 
     
-    .fa-plus {
-        padding-right: 10px;
-    } 
+    .fa-plus { padding-right: $TenPX; } 
 
-    .cart-button {
-        margin-left: 0;
-    }
+    .cart-button { margin-left: $ZeroPX; }
 }
 
 @media (min-width: 280px) and (max-width: 823px) and (orientation: landscape) {
-    .navbar {
-        padding-top: 10px;
-    }
+    .navbar { padding-top: $TenPX; }
 
     .nav-link {
         font-weight: bold;
         color: $Black;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding: 10px 0;
     }
     
     #header-img, #avatar, .nav-cart  {
-        padding-top: 4px;
-        padding-bottom: 10px;
+        padding-top: 5px;
+        padding-bottom: $TenPX;
     }
 
-    #product {
-        margin-top: 75px;
-    }
+    #product { margin-top: 75px; }
 
-    .thumbnail-images {
-        display: none
-    }
+    .thumbnail-container { display: none }
 
     .product-button {
         display: flex;
@@ -650,11 +617,9 @@ footer {
     }
 
     footer {
-        font-size: 0.8em;
+        font-size: $MediumEM;
         position: relative;
     }
 
-    .footer-text {
-        @include NoPadLeftRight;
-    }
+    .footer-text { @include NoPadLeftRight; }
 }
