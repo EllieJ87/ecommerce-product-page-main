@@ -1,152 +1,139 @@
-import generateToast from './toast.js';
-
-const amtBtns = document.querySelectorAll('.amt');
-const qty = document.querySelector('#qty');
-
-// const trashBtn = document.querySelector('#trash');
-const cartBody = document.querySelector('#cart__body');
-const checkoutBtn = document.querySelector('#checkout');
-const cartIndicator = document.querySelector('#cartIndicator');
-
-let total = 0;
-let amt = 0;
-
-const checkoutState = {
-  'default': 
-    `
-    <div></div>
-    <p class="cart-empty">Your Cart is Empty</p>
-    <div></div>
-    `,
-  
-  'items': 
-    `
-    <div>
-    <div class="cart-body-content">
-              <img class="cart-img" src="images/image-product-1-thumbnail.jpg" alt="shoes">
-              <div>
-                <h5>Fall Limited Edition Sneakers</h5>
-                <div class="price-info">
-                  <span>$125.00</span>
-                  <span>&times;</span>
-                  <span id="amt">3</span>
-                  <span id="total">$375</span>
-                  <i id="trash" aria-label="Remove product from cart" class="fas fa-trash-alt"></i>
-                </div>
-              </div>
-            </div>
-            <button class="btn checkout">Checkout</button>
-    `
+// This is the reference to the local storage element 'shoppingCart'
+let productsInCart = JSON.parse(localStorage.getItem('shoppingCart'));
+if(!productsInCart) {
+	productsInCart = []
 }
 
-// `
-// <div>
-//   <div class="cart__body--content-description flex gap-1">
-//     <img class="cart__img" src="./images/image-product-1-thumbnail.jpg" alt="Shoes">
-//         <div class="grid alt-bkg1">
-//           <p class="product--name">Fall Limited Edition Sneakers</p>
-//           <p class="product--amt flex">
-//             <span>$125.00</span>
-//             <span>&times;</span>
-//             <span id="amt">3</span>
-//             <span id="total" class="text font-bold">$375</span>
-//           </p>
-//         </div>
-//       </div>
+// can target the id rather 
+const parentElement = document.getElementById('buyItems')
+const cartSumPrice = document.getElementById('sum-prices')
+const quantityNumber = document.getElementById('quantity-total')
+const products = document.querySelectorAll('.product-under')
 
-//       <i id="trash" class="fas fa-trash-alt"></i>
+let countNum = 0
 
-//     </div>
-//     <button class="cart__body--btn rounded accent-pale bg-accent fs-2 font-bold">Checkout
-//     </button>
-//   </div>
-//   `
+const changeCount = (num) => {
+	countNum += num
+	document.getElementById('count-indicator').innerHTML = countNum
+} 
 
-// ------------------- SHOPPING CART TOGGLE -----------------//
-const closeCart = () => {
-	const cart = document.querySelector('#cartPanel');
-	cart.classList.toggle('hide');
-	document.querySelector('body').classList.toggle('stopScrolling')
+const countTheSumPrice = () => {
+	let sum = 0
+	productsInCart.forEach(item => {
+		sum += item.price
+	})
+	return sum
 }
 
-const openShopCart = document.querySelector('#cartBtn');
-openShopCart.addEventListener('click', () => {
-	const cart = document.querySelector('#cartPanel');
-	cart.classList.toggle('hide');
-	document.querySelector('body').classList.toggle('stopScrolling');
+const updateShoppingCartHTML = () => {
+	localStorage.setItem('shoppingCart', JSON.stringify(productsInCart))
+	if(productsInCart.length > 0) {
+		let result = productsInCart.map(product => {
+			return `
+
+			<li class="buyItem">
+				<img src="${product.image}">
+				<div>
+					<h5>${product.name}</h5>
+					<div class="price-info">
+						<h6>$125.00</h6> 
+						<h6>x</h6>
+						<h6 class="countOfProduct">${product.count}</h6>
+						<h6 id="sum-prices" class="bold-font">$${product.price}.00</h6>
+						<i id="deleteAll" class="fas fa-trash-alt"></i>
+					</div>
+				</div>
+      </li>
+      `	
+		})
+
+		parentElement.innerHTML = result.join('')
+		document.querySelector('.checkout').classList.remove('hidden')
+		//  The quantity number instead
+		// cartSumPrice.innerHTML = countTheSumPrice()
+
+	} else {
+		document.querySelector('.checkout').classList.add('hidden')
+		// NOT DISPLAYING THE EMPTY CART MESSAGE
+		parentElement.innerHTML = '<h4 class="cartEmpty">Your cart is empty</h4>'
+		// can add my own information needed in here
+		// cartSumPrice.innerHTML = ""
+		// Add document.querySelector('.checkout').classList.add('hidden')
+		// For the div element to be removed
+	}
+}
+
+const updateProductsInCart = (product) => {
+	for(let i = 0; i < productsInCart.length; i++) {
+		if(productsInCart[i].id == product.id) {
+			productsInCart[i].count += 1;
+			productsInCart[i].price = productsInCart[i].basePrice * productsInCart[i].count;
+			return;
+ 		}
+	}
+	productsInCart.push(product);
+}
+
+// class of products-under
+products.forEach(item => {   // 1
+	item.addEventListener('click', (e) => {
+		if (e.target.classList.contains('addToCart')) {
+			const productID = e.target.dataset.productId;
+			const productName = item.querySelector('.productName').innerHTML;
+			const productPrice = item.querySelector('.priceValue').innerHTML;
+			const productImage = item.querySelector('.cartImg').src; //change to a class and add to the image?
+			let product = {
+				name: productName,
+				image: productImage,
+				id: productID,
+				count: 1,
+				price: +productPrice,
+				basePrice: +productPrice,
+			}
+			updateProductsInCart(product);
+			updateShoppingCartHTML();
+		}
+	});
 });
 
-const overlay = document.querySelector('.overlay');
-overlay.addEventListener('click', closeCart);
+const quantityButton = document.getElementById('quantity-button')
 
-const cartPanel = document.querySelector('#cartPanel');
-// const cartBtn = document.querySelector('#cartBtn');
+// $('#button-plus').click(function(){
+// 	console.log('You have clicked on the Plus button')
+// })
 
-// function toggleCart(){
-//   cartBtn.getAttribute('aria-expanded') === 'false'
-//     ? cartBtn.setAttribute('aria-expanded', 'true')
-//     : cartBtn.setAttribute('aria-expanded', 'false')
-//   cartBtn.getAttribute('aria-expanded') === 'false'
-//     ? cartPanel.setAttribute('disabled', 'true')
-//     : cartPanel.removeAttribute('disabled')
-// }
+// $('#button-minus').click(function(){
+// 	console.log('You have clicked on the Minus button')
+// })
 
-// ------------------- SHOPPING CART TOGGLE -----------------//
+// id of buyitems
+// could remove the parent item function and just have the if statement? 
+// could change these to be id's instead? as there will only be 1 of these on the page
+// was parent Element
+// parentElement.addEventListener('click', (e) => {
+// 	const isPlusButton = e.target.classList.contains('button-plus')
+// 	const isMinusButton = e.target.classList.contains('button-minus')
+// 	if(isPlusButton || isMinusButton) {
+// 		for(let i = 0; i < productsInCart.length; i++) {
+// 			if(productsInCart[i].id === e.target.dataset.id) {
+// 				if(isPlusButton) {
+// 					productsInCart[i].count += 1
+// 				} else if(isMinusButton) {
+// 					productsInCart[i].count -= 1
+// 				}
+// 				productsInCart[i].price = productsInCart[i].basePrice * productsInCart[i].count
+// 			}
+// 			if(productsInCart[i].count <= 0) {
+// 				productsInCart.splice(i, 1)
+// 			}
+// 		}
+// 		updateShoppingCartHTML()
+// 	}
+// })
 
-function updateCartState(){
-  if(amt === 0){
-    cartBody.innerHTML = checkoutState.default;
-    cartIndicator.textContent = null;
-    cartIndicator.classList.remove('cartIndicator-active');
-  } else {
-    total += amt;
-    cartBody.innerHTML = checkoutState.items;
-    const PRICE = 125;
-    const productAmt = document.querySelector('#amt');
-    const productTotal = document.querySelector('#total');
-    productAmt.textContent = total;
-    cartIndicator.textContent = total;
-    cartIndicator.classList.add('cartIndicator-active');
-    productTotal.textContent = `$${total * PRICE}.00`;
-    // document.querySelector('.cart__body--btn').textContent = `Checkout (${`$${total * PRICE}.00`})`;
-    generateToast(`${amt} Boo`)
-  }
-}
+parentElement.addEventListener('click', (e) => {
+	const isDeleteButton = e.target.classList.contains('deleteAll')
+	console.log('delete button has been clicked', isDeleteButton)
+})
 
-function handleAmtBtnClick(e){
-  if(e.currentTarget.id === 'amt--decrease'){
-    amt === 0 ? e.currentTarget : amt--;
-  } else {
-    amt++;
-  }
-  qty.textContent = amt;
-  const amtDecreaseBtn = document.querySelector('#amt--decrease');
-  if(amt === 0){
-    amtDecreaseBtn.setAttribute('disabled', 'true');
-    // amtDecreaseBtn.classList.remove('accent');
-    // amtDecreaseBtn.classList.add('alt-bkg2');
-  } else {
-    amtDecreaseBtn.removeAttribute('disabled');
-    // amtDecreaseBtn.classList.remove('alt-bkg2');
-    // amtDecreaseBtn.classList.add('accent');
-  }
-}
-
-amtBtns.forEach(b => b.addEventListener('click', handleAmtBtnClick));
-
-// cartBtn.addEventListener('click', toggleCart);
-
-checkoutBtn.addEventListener('click', () => {
-  amt =+ qty.textContent;
-  updateCartState();
-});
-
-cartPanel.addEventListener('click', (e) => {
-  e.currentTarget === e.target && toggleCart();
-  if(e.target === document.querySelector('#trash')){
-    amt = 0;
-    total = 0;
-    updateCartState();
-    generateToast('Items removed from cart.')
-  }
-});
+updateShoppingCartHTML()
