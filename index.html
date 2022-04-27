@@ -60,87 +60,301 @@
                 </ul>
               </div>
             </div>
+            
             <div class="navbar-cart">
-              <i class="bi bi-cart3 nav-cart"></i>
-              <img src="images/image-avatar.png" alt="avatar" id="avatar">
-              <!--<i class="fa fa-solid fa-trash-can"></i>-->
+              <button id="cartBtn" class="cart-qnty" aria-expanded="false" aria-label="Open cart">
+                <span id="cartIndicator" class="cartIndicator bg-accent bkg"></span>
+                <i class="bi bi-cart3 shoppingCartButton"></i>
+                <!-- <i id="cartBtn" class="bi bi-cart3 shoppingCartButton"></i> -->
+                <!--The total prices of products in the shopping cart -->
+                <!-- <h6 id="quantity-total" class="quantity-badge"></h6> -->
+              </button>
+              <a href="#">
+                <img src="images/image-avatar.png" alt="avatar" class="avatar">
+              </a>
             </div>
-          </div>
+
+            <div id="toast-container" class="toast-container"></div>
+
+            <!-- NEED THIS ELEMENT -->
+            <!-- <div class="producstOnCart hide">
+              <div class="overlay"></div>
+              <div class="top">
+                <p>Cart</p>                
+              </div>
+              <ul id="buyItems">
+                <h4 class="cartEmpty">Your shopping cart is empty</h4> -->
+
+                <!-- Hide this element! -->
+                <!-- <li class="buyItem">
+                  <img src="images/image-product-1-thumbnail.jpg">
+                  <div>
+                    <h5>Fall Limited Edition Sneakers</h5>
+                    <div class="price-info">
+                      <h6>$125.00</h6> 
+                      <h6>x</h6>
+                      <h6 class="countOfProduct">1</h6>
+                      <h6 id="sum-prices" class="bold-font">$375</h6>
+                      <i class="fas fa-trash-alt"></i>
+                    </div>
+                  </div>
+                </li> -->
+              <!-- TO HERE -->
+
+              <!-- </ul>
+              <button class="btn checkout">Checkout</button>
+            </div> -->
+
+          </div><!--container-md navbar-container-->
+
         </nav>
+
+        <!-- <div class="cart-container" id="cartPanel" disabled>
+          <div class="cart">
+            <p class="cart__header font-bold">Cart</p>
+            <div id="cart__body" class="cart__body grid gap-1">
+              <div></div>
+              <p class="cart-empty">Your cart is empty</p>
+              <div></div> -->
+              <!-- <div class="cart-body-content">
+                <img class="cart-img" src="images/image-product-1-thumbnail.jpg" alt="shoes">
+                <div class="grid gap-1">
+                  <h5>Fall Limited Edition Sneakers</h5>
+                  <div class="price-info">
+                    <span>$125.00</span>
+                    <span>&times;</span>
+                    <span id="amt">3</span>
+                    <span id="total">$375</span>
+                    <i id="trash" aria-label="Remove product from cart" class="fas fa-trash-alt"></i>
+                  </div>
+
+                </div>
+
+              </div>
+              <button class="btn checkout">Checkout</button> -->
+
+
+            <!-- </div>
+
+          </div> -->
+          
+          <!-- <div class="producstOnCart">
+            <div class="overlay"></div>
+            <div class="top">
+              <p>Cart</p>
+            </div>
+            <ul id="buyItems">
+              <h4 class="cartEmpty">Your shopping cart is empty</h4> -->
+              
+              <!-- Hide this element! -->
+              <!-- <li class="buyItem">
+                <img src="images/image-product-1-thumbnail.jpg">
+                <div>
+                  <h5>Fall Limited Edition Sneakers</h5>
+                  <div class="price-info">
+                    <h6>$125.00</h6> 
+                    <h6>x</h6>
+                    <h6 class="countOfProduct">1</h6>
+                    <h6 id="sum-prices" class="bold-font">$375</h6>
+                    <i class="fas fa-trash-alt"></i>
+                  </div>
+                </div>
+              </li> -->
+              <!-- TO HERE -->
+
+            <!-- </ul>
+            <button class="btn checkout">Checkout</button>
+          </div> -->
+
+        <!-- </div> -->
+
+        <div class="producstOnCart hide" id="cartPanel">
+          <div class="overlay"></div>
+          <div class="top">
+            <p>Cart</p>
+          </div>
+          <div id="cart__body" class="cart-body">
+            <div></div>
+            <p class="cart-empty">Your Cart is Empty</p>
+            <div></div>
+
+            <!-- <div class="cart-body-content">
+              <img class="cart-img" src="images/image-product-1-thumbnail.jpg" alt="shoes">
+              <div>
+                <h5>Fall Limited Edition Sneakers</h5>
+                <div class="price-info">
+                  <span>$125.00</span>
+                  <span>&times;</span>
+                  <span id="amt">3</span>
+                  <span id="total">$375</span>
+                  <i id="trash" aria-label="Remove product from cart" class="fas fa-trash-alt"></i>
+                </div>
+              </div>
+            </div>
+            <button class="btn checkout">Checkout</button> -->
+
+          </div>
+          <!-- <ul> -->
+
+            <!-- <h4 class="cart-empty">Your shopping cart is empty</h4> -->
+
+            <!-- <li class="buyItem">
+              <img src="images/image-product-1-thumbnail.jpg">
+              <div>
+                <h5>Fall Limited Edition Sneakers</h5>
+                <div class="price-info">
+                  <h6>$125.00</h6> 
+                  <h6>x</h6>
+                  <h6 class="countOfProduct">1</h6>
+                  <h6 id="sum-prices" class="bold-font">$375</h6>
+                  <i id="trash" class="fas fa-trash-alt"></i>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <button class="btn checkout">Checkout</button> -->
+
+
+          <!-- <div class="cart">
+            <div id="cart__body" class="cart__body grid gap-1">
+              <div></div>
+              <p class="cart-empty">...</p>
+              <div></div> -->
+              <!-- <div class="cart-body-content">
+                <img class="cart-img" src="images/image-product-1-thumbnail.jpg" alt="shoes">
+                <div class="grid gap-1">
+                  <h5>Fall Limited Edition Sneakers</h5>
+                  <div class="price-info">
+                    <span>$125.00</span>
+                    <span>&times;</span>
+                    <span id="amt">3</span>
+                    <span id="total">$375</span>
+                    <i id="trash" aria-label="Remove product from cart" class="fas fa-trash-alt"></i>
+                  </div>
+
+                </div>
+
+              </div>
+              <button class="btn checkout">Checkout</button> -->
+
+<!-- 
+            </div>
+
+          </div> -->
+          
+          <!-- <div class="producstOnCart">
+            <div class="overlay"></div>
+            <div class="top">
+              <p>Cart</p>
+            </div>
+            <ul id="buyItems">
+              <h4 class="cartEmpty">Your shopping cart is empty</h4> -->
+              
+              <!-- Hide this element! -->
+              <!-- <li class="buyItem">
+                <img src="images/image-product-1-thumbnail.jpg">
+                <div>
+                  <h5>Fall Limited Edition Sneakers</h5>
+                  <div class="price-info">
+                    <h6>$125.00</h6> 
+                    <h6>x</h6>
+                    <h6 class="countOfProduct">1</h6>
+                    <h6 id="sum-prices" class="bold-font">$375</h6>
+                    <i class="fas fa-trash-alt"></i>
+                  </div>
+                </div>
+              </li> -->
+              <!-- TO HERE -->
+
+            <!-- </ul>
+            <button class="btn checkout">Checkout</button>
+          </div> -->
+
+        </div>
         
         <section id="product" class="container">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="product-image-container">
-                <img src="images/image-product-1.jpg" alt="product-one" id="main-img" class="img-fluid product-image">
-                <div class="toggle-buttons">
-                  <i class="fa fa-regular fa-angle-left"></i>
-                  <i class="fa fa-regular fa-angle-right"></i>
-                </div>
-              </div>
 
-              <div class="thumbnail-container">
-                <div class="col-3">
-                  <div class="thumbnail-image-container">
-                    <img src="images/image-product-1.jpg" alt="thumb-one" class="img-thumbnail thumbnail active">
+          <div class="product-under">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="product-image-container product-under">
+                  <img src="images/image-product-1.jpg" alt="product-one" id="main-img" class="img-fluid product-image">
+                  <div class="toggle-buttons">
+                    <!-- <i class="fa fa-regular fa-angle-left"></i>
+                    <i class="fa fa-regular fa-angle-right"></i> -->
                   </div>
                 </div>
-                <div class="col-3">
-                  <div class="thumbnail-image-container">
-                    <img src="images/image-product-2.jpg" alt="thumb-two" class="img-thumbnail thumbnail">
-                  </div>
-                </div>
-                <div class="col-3">
-                  <div class="thumbnail-image-container">
-                    <img src="images/image-product-3.jpg" alt="thumb-three" class="img-thumbnail thumbnail">
-                  </div>
-                </div>
-                <div class="col-3">
-                  <div class="thumbnail-image-container">
-                    <img src="images/image-product-4.jpg" alt="product-one" class="img-thumbnail thumbnail">
-                  </div>
-                </div>
-              </div>
-            </div>
-              
-            <div class="col-lg-6 product-information">
-              <div class="product-information-container">
-                <div class="product-header">
-                  <p class="header-title">Sneaker Company</p>
-                  <h3 class="product-name">Fall Limited Edition Sneakers</h3>
-                </div>
-                <div class="product-body">
-                  <p class="product-info">
-                    These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.
-                  </p>
-                    
-                  <span class="price-container">
-                    <h3 class="new-price">$125.00</h3>
-                    <span>
-                      <p class="reduced-percent">50%</p>
-                    </span>
-                  </span>
-                  <p class="old-price">$250.00</p>
-                  <div class="product-button">
-                    <div class="row">
-                      <div class="col-xl-4 col-md-6">
-                        <div class="quantity-button">
-                          <button class="fa fa-regular fa-minus" type="button"></button>
-                          <span class="quantity-num">0</span>
-                          <button class="fa fa-regular fa-plus" type="button"></button>
-                        </div>
+  
+                <div class="product-under">
+                  <div class="thumbnail-container">
+                    <div class="col-3">
+                      <div class="thumbnail-image-container">
+                        <img src="images/image-product-1.jpg" alt="thumb-one" class="img-thumbnail thumbnail active cartImg">
                       </div>
-                      <div class="col-xl-8 col-md-6">
-                        <button class="btn cart-button btn-block" type="button">
-                          <i class="bi bi-cart3 cart-icon"></i>Add to cart
-                        </button>
+                    </div>
+                    <div class="col-3">
+                      <div class="thumbnail-image-container">
+                        <img src="images/image-product-2.jpg" alt="thumb-two" class="img-thumbnail thumbnail">
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="thumbnail-image-container">
+                        <img src="images/image-product-3.jpg" alt="thumb-three" class="img-thumbnail thumbnail">
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="thumbnail-image-container">
+                        <img src="images/image-product-4.jpg" alt="product-one" class="img-thumbnail thumbnail">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+              </div>
+                
+              <div class="col-lg-6 product-information">
+                <div class="product-information-container">
+                  <div class="product-header product-under">
+                    <p class="header-title">Sneaker Company</p>
+                    <h3 class="product-name productName">Fall Limited Edition Sneakers</h3>
+                  </div>
+                  <div class="product-body">
+                    <p class="product-info">
+                      These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.
+                    </p>
+                      
+                    <span class="price-container">
+                      <h3 class="new-price">
+                        $<span class="priceValue">125.00</span>
+                      </h3>
+                      <span>
+                        <p class="reduced-percent">50%</p>
+                      </span>
+                    </span>
+                    <p class="old-price">$250.00</p>
+                    <div class="product-button">
+                      <div class="row">
+                        <div class="col-xl-4 col-md-6">
+                          <div id="quantity-button" class="quantity-button">
+                            <button id="amt--decrease" class="fa fa-regular fa-minus amt" type="button" aria-label="Decrease quantity" disabled></button>
+                            <span id="qty" class="quantity-num" aria-label="Current Quantity">0</span>
+                            <button id="amt--increase" class="fa fa-regular fa-plus amt" type="button" aria-label="Increase quantity"></button>
+                          </div>
+                        </div>
+                        <div class="col-xl-8 col-md-6">
+                          <button id="checkout" class="btn cart-button btn-block">
+                            <i class="bi bi-cart3 cart-icon"></i>Add to Cart
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
           </div>
+          
         </section>
       </div>
       
@@ -162,7 +376,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     
     <!-- My js file link -->
-    <script src="script/script.js"></script>
+    <!-- <script src="script/script.js"></script> -->
+    <!-- <script src="script/shopping-cart.js"></script> -->
+    <script src="script/shopping-cart-2.js" type="module"></script>
   
   </body>
 </html>
