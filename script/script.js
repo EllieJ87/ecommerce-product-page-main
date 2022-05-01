@@ -14,30 +14,6 @@ for (let i = 0; i < thumbnails.length; i++) {
   })
 }
 
-
-
-// ------------------- SHOPPING CART TOGGLE -----------------//
-const closeCart = () => {
-	const cart = document.querySelector('.producstOnCart');
-	cart.classList.toggle('hide');
-	document.querySelector('body').classList.toggle('stopScrolling')
-}
-
-
-const openShopCart = document.querySelector('.shoppingCartButton');
-openShopCart.addEventListener('click', () => {
-	const cart = document.querySelector('.producstOnCart');
-	cart.classList.toggle('hide');
-	document.querySelector('body').classList.toggle('stopScrolling');
-});
-
-const overlay = document.querySelector('.overlay');
-overlay.addEventListener('click', closeCart);
-
-
-
-
-
 // ------------------- LIGHTBOX -----------------//
 const lightBox = document.getElementById("lightBox")
 
