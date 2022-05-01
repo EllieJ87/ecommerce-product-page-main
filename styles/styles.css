@@ -74,12 +74,12 @@ body {
   border: none;
 }
 
-.shoppingCartButton {
+.shopping-cart-button {
   cursor: pointer;
   color: #1D2025;
 }
 
-.shoppingCartButton:hover {
+.shopping-cart-button:hover {
   color: #FF7D1A;
 }
 
@@ -88,10 +88,13 @@ body {
   padding-bottom: 20px;
 }
 
+<<<<<<< HEAD
 .avatar img {
   border: 1px solid #FF7D1A;
 }
 
+=======
+>>>>>>> a3e058173940566709a5ff19df350329d16ef3a0
 .producstOnCart {
   top: 60px;
   right: 30px;
@@ -625,10 +628,6 @@ body {
   font-size: 1em;
 }
 
-.amt[disabled] {
-  cursor: default;
-}
-
 .cart-button {
   background-color: #FF7D1A;
   display: block;
@@ -689,8 +688,7 @@ footer {
 
 .copyright-footer > a:hover {
   font-weight: 700;
-  color: #1D2025;
-  border-bottom: 3px solid #FF7D1A;
+  color: #FF7D1A;
 }
 
 .footer-links {
@@ -712,9 +710,8 @@ footer {
   margin-right: 20px;
 }
 
-.bi-linkedin:hover {
-  color: #1D2025;
-  border-bottom: 3px solid #FF7D1A;
+.bi-linkedin:hover, .bi-github:hover {
+  color: #FF7D1A;
   padding: 0;
 }
 
@@ -722,12 +719,6 @@ footer {
   font-size: 1.2em;
   color: #B6BCC8;
   text-decoration: none;
-}
-
-.bi-github:hover {
-  color: #1D2025;
-  border-bottom: 3px solid #FF7D1A;
-  padding: 0;
 }
 
 @media (max-width: 991px) {
@@ -803,7 +794,7 @@ footer {
     border-bottom: none;
     padding: 0;
   }
-  #header-img {
+  .header-img {
     padding-bottom: 0;
   }
   #avatar {
@@ -942,7 +933,7 @@ footer {
     color: #000000;
     padding: 10px 0;
   }
-  #header-img, #avatar, .nav-cart {
+  .header-img, #avatar, .nav-cart {
     padding-top: 5px;
     padding-bottom: 10px;
   }
