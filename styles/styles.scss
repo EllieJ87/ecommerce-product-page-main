@@ -141,7 +141,6 @@ body {
 	animation: fade 1s;
 }
 
-<<<<<<< HEAD
 // ---------- NAVBAR - CART BASKET ---------- //
 .producstOnCart {
 	top: 60px;
@@ -202,52 +201,6 @@ body {
 	text-align: center;
 	font-weight: bold;
 }
-=======
-@keyframes fade {
-	from {top: 0px;}
-	to {top: 60px;}
-}
-
-.overlay {
-	overflow: hidden;
-	display: inline-block;
-	content: "";
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100vw;
-	height: 100vh;
-	z-index: -1;
-}
-
-.cartIndicator {
-	font-size: 0.6rem;
-	position: absolute;
-	top: -5px;
-	right: 0;
-}
-
-.cart-indicator-active {
-	background-color: $Orange;
-	color: $White;
-	padding: 0.05rem 0.5rem;
-	font-size: 0.5em;
-	border-radius: 50px;
-}
-
-.empty-cart-content {
-	padding: 30px 10px;
-	display: flex;
-	align-content: center;
-	justify-content: center;
-}
-
-.cart-empty {
-	color: $Deep_Grey_Blue;
-	text-align: center;
-	font-weight: bold;
-}
->>>>>>> a3e058173940566709a5ff19df350329d16ef3a0
   
 .cart-body-content {
 	display: flex;
