@@ -2,7 +2,6 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Kumbh Sans', sans-serif;
 }
 
 body {
@@ -17,6 +16,7 @@ body {
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
+  font-family: 'Kumbh Sans', sans-serif;
 }
 
 .navbar {
@@ -28,7 +28,7 @@ body {
   border-bottom: 1px solid #68707D;
 }
 
-#header-img {
+.header-img {
   width: 100px;
   height: auto;
   padding-bottom: 20px;
@@ -64,24 +64,230 @@ body {
           align-items: center;
 }
 
-.nav-cart {
-  color: #1D2025;
+.cart-qnty {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding: 0 15px 20px 0;
+  background-color: transparent;
+  border: none;
 }
 
-#avatar {
+.shopping-cart-button {
+  cursor: pointer;
+  color: #1D2025;
+}
+
+.shopping-cart-button:hover {
+  color: #FF7D1A;
+}
+
+.avatar {
   height: 50px;
   padding-bottom: 20px;
 }
 
-.fa-trash-can:before {
-  content: '\f2ed';
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-  font-size: 1em;
-  color: #FF7D1A;
+.producstOnCart {
+  top: 60px;
+  right: 30px;
+  background-color: #FFFFFF;
+  width: 375px;
+  height: 240px;
+  color: #000000;
+  z-index: 2000;
+  position: fixed;
+  text-align: center;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 5px 8px 5px #B6BCC8;
+          box-shadow: 0px 5px 8px 5px #B6BCC8;
+  -webkit-animation: fade 1s;
+          animation: fade 1s;
 }
 
+@-webkit-keyframes fade {
+  from {
+    top: 0px;
+  }
+  to {
+    top: 60px;
+  }
+}
+
+@keyframes fade {
+  from {
+    top: 0px;
+  }
+  to {
+    top: 60px;
+  }
+}
+
+.overlay {
+  overflow: hidden;
+  display: inline-block;
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.cartIndicator {
+  font-size: 0.6rem;
+  position: absolute;
+  top: -5px;
+  right: 0;
+}
+
+.cart-indicator-active {
+  background-color: #FF7D1A;
+  color: #FFFFFF;
+  padding: 0.05rem 0.5rem;
+  font-size: 0.5em;
+  border-radius: 50px;
+}
+
+.empty-cart-content {
+  padding: 30px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cart-empty {
+  color: #68707D;
+  text-align: center;
+  font-weight: bold;
+}
+
+.cart-body-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.cart-product-title {
+  color: #68707D;
+  font-size: 1.1em;
+}
+
+.amt[disabled] {
+  cursor: default;
+  color: #B6BCC8;
+}
+
+.stopScrolling {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.producstOnCart .top {
+  text-align: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 30%;
+}
+
+.producstOnCart .top:after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 95%;
+  height: 90%;
+  border-bottom: 1px solid #B6BCC8;
+}
+
+.top p {
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #000000;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.producstOnCart img {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+}
+
+.price-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.price-info span {
+  padding-right: 5px;
+  text-align: center;
+}
+
+#total {
+  font-weight: bold;
+}
+
+.fa-trash-alt {
+  font-size: 1em;
+  color: #B6BCC8;
+}
+
+.fa-trash-alt:hover {
+  color: #FF7D1A;
+  cursor: pointer;
+}
+
+.checkout {
+  display: block;
+  width: 90%;
+  color: #FFFFFF;
+  background-color: #FF7D1A;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 12px 5px;
+  border-radius: 10px;
+  margin: 10px auto;
+}
+
+.checkout:hover {
+  -webkit-box-shadow: 0 2px 15px #FF7D1A;
+          box-shadow: 0 2px 15px #FF7D1A;
+  color: #FFFFFF;
+}
+
+.hidden {
+  display: none;
+}
+
+.hide {
+  display: none;
+  visibility: none;
+}
+
+/* TOAST CSS */
 #bars {
   font-size: 0.7em;
   color: #1D2025;
@@ -355,6 +561,10 @@ body {
   color: #FF7D1A;
 }
 
+.fa-minus:hover, .fa-plus:hover {
+  color: #B6BCC8;
+}
+
 .fa-minus {
   padding-left: 20px;
 }
@@ -394,7 +604,7 @@ body {
 }
 
 .cart-icon:hover {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 footer {
@@ -430,8 +640,7 @@ footer {
 
 .copyright-footer > a:hover {
   font-weight: 700;
-  color: #1D2025;
-  border-bottom: 3px solid #FF7D1A;
+  color: #FF7D1A;
 }
 
 .footer-links {
@@ -453,9 +662,8 @@ footer {
   margin-right: 20px;
 }
 
-.bi-linkedin:hover {
-  color: #1D2025;
-  border-bottom: 3px solid #FF7D1A;
+.bi-linkedin:hover, .bi-github:hover {
+  color: #FF7D1A;
   padding: 0;
 }
 
@@ -463,12 +671,6 @@ footer {
   font-size: 1.2em;
   color: #B6BCC8;
   text-decoration: none;
-}
-
-.bi-github:hover {
-  color: #1D2025;
-  border-bottom: 3px solid #FF7D1A;
-  padding: 0;
 }
 
 @media (max-width: 991px) {
@@ -538,12 +740,13 @@ footer {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    padding-bottom: 20px;
   }
   .navbar-container {
     border-bottom: none;
     padding: 0;
   }
-  #header-img {
+  .header-img {
     padding-bottom: 0;
   }
   #avatar {
@@ -553,6 +756,7 @@ footer {
   }
   .nav-cart {
     padding-right: 20px;
+    padding-bottom: 0;
   }
   .navbar-nav {
     padding-left: 10px;
@@ -565,8 +769,12 @@ footer {
   .fa-xmark {
     padding-top: 20px;
   }
-  .nav-cart {
-    padding-bottom: 0;
+  .producstOnCart {
+    right: 20px;
+    width: 90vw;
+  }
+  .buyItem .bold-font {
+    padding-right: 40%;
   }
   .thumbnail-container {
     display: none;
@@ -677,7 +885,7 @@ footer {
     color: #000000;
     padding: 10px 0;
   }
-  #header-img, #avatar, .nav-cart {
+  .header-img, #avatar, .nav-cart {
     padding-top: 5px;
     padding-bottom: 10px;
   }

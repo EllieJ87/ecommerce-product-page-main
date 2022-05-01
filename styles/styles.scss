@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-// COLOUR //
+// ---------- COLOUR VARIABLES ---------- //
 $Orange: #FF7D1A;
 $Orange_Alpha: rgba(255, 125, 26, 1);
 $Pale_Orange: #FFEDE0;
@@ -12,115 +12,303 @@ $White: #FFFFFF;
 $Black: #000000;
 $Black_Alpha: rgba(0,0,0,0.75);
 
-// Dimension Spacing //
+// ---------- DIMENSION SPACING ---------- //
 $ZeroPX: 0;
 $TenPX: 10px;
 $TwentyPX: 20px;
 
-// weights //
+// ---------- WEIGHTS ---------- //
 $RegularEM: 1em;
 $MediumEM: 0.8em;
 $SmallEM: 0.7em;
 
+// ---------- MIXIN VARIABLES ---------- //
 @mixin Hover-Underline {
-    color: $Dark_Navy;
-    border-bottom: 3px solid $Orange;    
+	color: $Dark_Navy;
+	border-bottom: 3px solid $Orange;    
 }
 
 @mixin NoPadLeftRight {
-    padding-left: 0;
-    padding-right: 0;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 @mixin PadMarginZero {
-    padding: 0;
-    margin: 0;
+	padding: 0;
+	margin: 0;
 }
 
 @mixin FlexCenterAlign {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 @mixin FlexAlignCenSB {
-    @include FlexCenterAlign;
-    justify-content: space-between;
+	@include FlexCenterAlign;
+	justify-content: space-between;
 }
 
 @mixin FlexCenterSelf {
-    display: flex; 
-    align-self: center;
+	display: flex; 
+	align-self: center;
 }
 
+// ---------- MAIN BODY ---------- //
 * {
-    box-sizing: border-box;
-    font-family: 'Kumbh Sans', sans-serif;
+	box-sizing: border-box;
 }
 
 body { 
-    @include PadMarginZero();
-    background-color: $White;
-    color: $Black;
-    display: flex;
-    width: 100vw;
-    height: 100vh;    
-    overflow-x: hidden;
-    overflow-y: auto;
+	@include PadMarginZero();
+	background-color: $White;
+	color: $Black;
+	display: flex;
+	width: 100vw;
+	height: 100vh;    
+	overflow-x: hidden;
+	overflow-y: auto;
+	font-family: 'Kumbh Sans', sans-serif;
 }
 
-// NAVBAR //
+// ---------- NAVBAR ---------- //
 .navbar {
-    background-color: $White;
-    padding-top: $TwentyPX;
+	background-color: $White;
+	padding-top: $TwentyPX;
 }
 
 .navbar-container { border-bottom: 1px solid $Deep_Grey_Blue; }
 
-#header-img {
-    width: 100px;
-    height: auto;
-    padding-bottom: $TwentyPX;
+.header-img {
+	width: 100px;
+	height: auto;
+	padding-bottom: $TwentyPX;
 }
 
-// NAV LINKS //
+// ---------- NAVBAR - LINKS ---------- //
 .navbar-nav { padding-left: 30px; }
 
 .nav-item { padding-right: $TenPX; }
 
 .nav-link {
-    color: $Deep_Grey_Blue;
-    font-size: $MediumEM;
-    padding-bottom: $TwentyPX;
+	color: $Deep_Grey_Blue;
+	font-size: $MediumEM;
+	padding-bottom: $TwentyPX;
 }
   
 .nav-link:hover {
-    font-weight: 700;
-    @include Hover-Underline();
-    padding-bottom: $TwentyPX;
+	font-weight: 700;
+	@include Hover-Underline();
+	padding-bottom: $TwentyPX;
 }
 
-// NAVBAR CART //
 .navbar-cart { @include FlexCenterAlign(); }
 
-.nav-cart {
-    color: $Dark_Navy;
-    padding: 0 15px 20px 0;
+.cart-qnty {
+	position: relative;
+	display: flex;
+	padding: 0 15px 20px 0;
+	background-color: transparent;
+	border: none;
 }
 
-#avatar {
-    height: 50px;
-    padding-bottom: $TwentyPX;
+.shopping-cart-button {
+	cursor: pointer;
+	color: $Dark_Navy;
 }
 
-.fa-trash-can:before {
-    content: '\f2ed';
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
+.shopping-cart-button:hover {
+  color: $Orange;
+}
+
+.avatar {
+	height: 50px;
+	padding-bottom: $TwentyPX;
+}
+
+// ---------- NAVBAR - CART BASKET ---------- //
+.producstOnCart {
+	top: 60px;
+	right: 30px;
+	background-color: $White;
+	width: 375px;
+	height: 240px;
+	color: $Black;
+	z-index: 2000;
+	position: fixed;
+	text-align: center;
+	border-radius: 10px;
+	box-shadow: 0px 5px 8px 5px $Grey_Blue;
+	animation: fade 1s;
+}
+
+@keyframes fade {
+	from {top: 0px;}
+	to {top: 60px;}
+}
+
+.overlay {
+	overflow: hidden;
+	display: inline-block;
+	content: "";
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: -1;
+}
+
+.cartIndicator {
+	font-size: 0.6rem;
+	position: absolute;
+	top: -5px;
+	right: 0;
+}
+
+.cart-indicator-active {
+	background-color: $Orange;
+	color: $White;
+	padding: 0.05rem 0.5rem;
+	font-size: 0.5em;
+	border-radius: 50px;
+}
+
+.empty-cart-content {
+	padding: 30px 10px;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+
+.cart-empty {
+	color: $Deep_Grey_Blue;
+	text-align: center;
+	font-weight: bold;
+}
+  
+.cart-body-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 20px;
+}
+
+.cart-product-title {
+	color: $Deep_Grey_Blue;
+	font-size: 1.1em;
+}
+
+.amt[disabled] {
+    cursor: default;
+    color: $Grey_Blue;
+}
+
+.stopScrolling {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.producstOnCart .top {
+    text-align: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 30%;
+}
+
+.producstOnCart .top:after {
+    content: ""; 
+    display: block;
+    margin: 0 auto; 
+    width: 95%;
+    height: 90%;
+    border-bottom: 1px solid $Grey_Blue;
+}
+
+.top p {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: $Black;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.producstOnCart img {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+}
+
+.price-info {
+    display: flex;
+    align-items: baseline;
+}
+
+.price-info span {
+    padding-right: 5px;
+    text-align: center;
+}
+
+#total {
+    font-weight: bold;
+}
+
+.fa-trash-alt {
     font-size: $RegularEM; 
-    color: $Orange;
+    color: $Grey_Blue;
 }
 
-// MOBILE NAV // 
+.fa-trash-alt:hover {
+    color: $Orange;
+    cursor: pointer;
+}
+
+.checkout {
+    display: block;
+    width: 90%;
+    color: $White;
+    background-color: $Orange;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 12px 5px;
+    border-radius: 10px;
+    margin: 10px auto;
+}
+
+.checkout:hover {
+    box-shadow: 0 2px 15px $Orange;
+    color: $White;
+}
+
+.hidden {
+    display: none;
+}
+
+.hide {
+    display: none;
+    visibility: none;
+}
+
+/* TOAST CSS */
+
+// .toast-container {
+//     position: fixed;
+//     top: 60px;
+//     right: 30px;
+//     z-index: 8;
+//     display: grid;
+//   }
+  
+//   .toast {
+//     padding: 15px;
+//     transition: transform 250ms cubic-bezier(0.88, -0.1, 0.24, 1.07);
+//     animation: toastIt 3000ms cubic-bezier(0.88, -0.1, 0.24, 1.07) forwards;
+//   }
+
+// ---------- NAVBAR - MOBILE NAV ---------- //
 #bars {
     font-size: $SmallEM;
     color: $Dark_Navy;
@@ -138,7 +326,7 @@ body {
     color: $Dark_Navy;
 }
 
-// OFF CANVAS //
+// ---------- NAVBAR - MOBILE OFF CANVAS ---------- //
 .offcanvas {
     width: 58%;
     overflow-x: hidden;
@@ -146,13 +334,13 @@ body {
 
 .offcanvas-backdrop.show { opacity: .8; }
 
-// MAIN CONTENT //
+// ---------- PRODUCT CONTENT ---------- //
 #product {
     margin-top: 100px;
     padding: 0 50px;
 }
 
-// MAIN PRODUCT IMAGES //
+// ---------- PRODUCT CONTENT - IMAGES ---------- //
 .product-image-container, .col-3 { padding: 0 10px; }
 
 #main-img { cursor: pointer; }
@@ -164,19 +352,17 @@ body {
     cursor: pointer;
 }
 
-// THUMBNAIL PRODUCT IMAGES //
+// ---------- PRODUCT CONTENT - THUMBNAIL IMAGES ---------- //
 .thumbnail-container {
     display: inline-flex;
     margin-top: $TwentyPX;
 }
 
-// is this needed?
 .thumbnail-image-container {
     position: relative;
     box-sizing: border-box;
 }
-//
-// is this needed?
+
 .img-thumbnail {
     border: none;
     padding: $ZeroPX;
@@ -201,7 +387,7 @@ body {
     border: 3px solid $Orange;
 }
 
-// -- LIGHT BOX -- //
+// ---------- PRODUCT CONTENT - LIGHTBOX GALLERY ---------- //
 #lightbox {
     position: fixed;
     z-index: 2000;
@@ -268,7 +454,7 @@ body {
     display: inline-block;
 }
 
-// PRODUCT INFORMATION //
+// ---------- PRODUCT CONTENT - INFORMATION ---------- //
 .product-information-container{
     padding: 15% 13%;
 }
@@ -341,6 +527,10 @@ body {
     border: none;
     padding: $ZeroPX;
     color: $Orange;
+}
+
+.fa-minus:hover, .fa-plus:hover {
+    color: $Grey_Blue;
 } 
 
 .fa-minus { padding-left: $TwentyPX; } 
@@ -376,9 +566,9 @@ body {
     font-weight: 700;
 }
 
-.cart-icon:hover { font-weight: bold; }
+.cart-icon:hover { font-weight: 700; }
 
-// FOOTER // 
+// ---------- FOOTER ---------- //
 footer {
     align-content: center;
     position: fixed;
@@ -405,7 +595,7 @@ footer {
 
 .copyright-footer > a:hover {
     font-weight: 700;
-    @include Hover-Underline;
+		color: $Orange;
 }
 
 .footer-links {
@@ -421,8 +611,8 @@ footer {
     margin-right: $TwentyPX;
 }
 
-.bi-linkedin:hover {
-    @include Hover-Underline;
+.bi-linkedin:hover, .bi-github:hover {
+    color: $Orange;
     padding: $ZeroPX;
 }
 
@@ -432,15 +622,9 @@ footer {
     text-decoration: none;
 }
 
-.bi-github:hover {
-    @include Hover-Underline;
-    padding: $ZeroPX;
-}
-
-// MEDIA QUERIES //
+// ---------- MEDIA QUERIES ---------- //
 @media (max-width: 991px) {
     
-    // MAIN PRODUCT IMAGES //
     .product-image-container { padding-bottom: $TenPX; }
     
     .col-3 { margin-bottom: 15px; }
@@ -482,6 +666,7 @@ footer {
     .cart-button { margin: 5px 0 0 0 ; }
 }
 
+// ---------- MEDIA QUERIES - MOBILE ---------- //
 @media (max-width: 576px) {  
 
     .navbar {
@@ -489,14 +674,17 @@ footer {
         height: 50px;
     }
 
-    .mobile-nav { @include FlexCenterAlign(); }
+    .mobile-nav { 
+        @include FlexCenterAlign(); 
+        padding-bottom: 20px;
+    }
 
     .navbar-container {
         border-bottom: none;
         padding: $ZeroPX;  
     }
 
-    #header-img { padding-bottom: $ZeroPX; }
+    .header-img { padding-bottom: $ZeroPX; }
     
     #avatar {
         height: 30px;
@@ -504,7 +692,10 @@ footer {
         padding-right: $TwentyPX;
     }
 
-    .nav-cart { padding-right: $TwentyPX; }
+    .nav-cart { 
+        padding-right: $TwentyPX; 
+        padding-bottom: $ZeroPX;
+    }
     
     .navbar-nav { padding-left: $TenPX; }
 
@@ -515,8 +706,15 @@ footer {
     }
 
     .fa-xmark { padding-top: $TwentyPX; }
-    
-    .nav-cart { padding-bottom: $ZeroPX; }
+
+    .producstOnCart {
+        right: 20px;
+        width: 90vw;
+    }
+
+    .buyItem .bold-font {
+        padding-right: 40%;
+    }
     
     .thumbnail-container { display: none }
 
@@ -527,7 +725,6 @@ footer {
 
     .row { overflow-x: hidden; }
 
-    // MAIN PRODUCT IMAGES //
     .product-image-container {
         @include NoPadLeftRight;
         width: 100vw;
@@ -576,6 +773,7 @@ footer {
     .product-information-container { padding: $ZeroPX; }
 }
 
+// ---------- MEDIA QUERIES - LANDSCAPE ---------- //
 @media (min-width: 600px) and (max-width: 1024px) and (orientation: landscape) {
     footer {
         position: relative;
@@ -602,7 +800,7 @@ footer {
         padding: 10px 0;
     }
     
-    #header-img, #avatar, .nav-cart  {
+    .header-img, #avatar, .nav-cart  {
         padding-top: 5px;
         padding-bottom: $TenPX;
     }
