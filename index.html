@@ -112,12 +112,40 @@
           <div class="row">
             <div class="col-lg-6">
               <div class="product-image-container">
-                <img src="images/image-product-1.jpg" alt="product-one" id="main-img" class="img-fluid product-image" onclick="openLightBox();currentSlide(1)">
-                <!-- <div class="toggle-buttons">
-                  <i class="fa fa-regular fa-angle-left"></i>
-                  <i class="fa fa-regular fa-angle-right"></i>
-                </div> -->
+                <div class="desktop">
+                  <img src="images/image-product-1.jpg" alt="product-one" id="main-img" class="img-fluid product-image" onclick="openLightBox();currentSlide(1)"> 
+                </div>
+
+                <div class="mobile-carousel" aria-label="Newest Photos">
+                  <div class="carousel" data-carousel>
+            
+                    <button class="carousel-button prev" data-carousel-button="prev">
+                      <i class="fa fa-regular fa-angle-left"></i>
+                    </button>
+                    <button class="carousel-button next" data-carousel-button="next">
+                      <i class="fa fa-regular fa-angle-right"></i>
+                    </button>
+            
+                    <div data-slides>
+                      <div class="slide" data-active>
+                        <img src="images/image-product-1.jpg" alt="Shoe 1" class="img-fluid">
+                      </div>
+                      <div class="slide">
+                        <img src="images/image-product-2.jpg" alt="Shoe 2" class="img-fluid">
+                      </div>
+                      <div class="slide">
+                        <img src="images/image-product-3.jpg" alt="Shoe 3" class="img-fluid">
+                      </div>
+                      <div class="slide"> 
+                        <img src="images/image-product-4.jpg" alt="Shoe 4" class="img-fluid">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
               </div>
+
+
               
               <div class="thumbnail-container">
                 <div class="col-3">
@@ -141,6 +169,7 @@
                   </div>
                 </div>
               </div>
+
             </div>
 
             <div id="lightBox" class="light-box">
@@ -167,7 +196,6 @@
                     <i class="fa fa-regular fa-angle-left prev" onclick="plusSlides(-1)"></i>
                     <i class="fa fa-regular fa-angle-right next" onclick="plusSlides(1)"></i>
                   </div>
-                 
                   
                   <div class="thumbnail-lightbox-container">
                       <div class="lb-thumbnail-image">
@@ -187,15 +215,13 @@
                       </div>
 
                   </div>
- 
-
                 
               </div>
             </div>
 
 
             
-            <div class="col-lg-6 product-information">
+            <div class="col-lg-6">
               <div class="product-information-container">
                 <div class="product-header">
                   <p class="header-title">Sneaker Company</p>
@@ -237,6 +263,7 @@
           </div>
 
         </section>
+
       </div>
       
       <footer class="container-fluid">

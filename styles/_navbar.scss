@@ -1,0 +1,250 @@
+.navbar {
+	background-color: $White;
+	padding-top: $TwentyPX;
+  height: auto;
+
+  .navbar-container { 
+    border-bottom: 1px solid $Deep_Grey_Blue; 
+
+    .header-img {
+      width: 100px;
+      height: auto;
+      padding-bottom: $TwentyPX;
+    }
+    
+    // ---------- NAVBAR - MOBILE NAV ---------- //
+    #bars {
+      font-size: $SmallEM;
+      color: $Dark_Navy;
+    }
+
+    #close-btn {
+      background-color: transparent;
+      border: none;
+    }
+    
+    .fa-xmark:before {
+      content: '\f00d';
+      font-family: 'Font Awesome 5 Free';
+      font-size: $RegularEM; 
+      color: $Dark_Navy;
+    }
+    
+    // ---------- NAVBAR - MOBILE OFF CANVAS ---------- //
+    .offcanvas {
+      width: 58%;
+      overflow-x: hidden;
+    }
+    
+    .offcanvas-backdrop.show { opacity: .8; }
+  }
+}
+
+// ---------- NAVBAR - LINKS ---------- //
+.navbar-nav { 
+  padding-left: 30px; 
+
+  .nav-item { 
+    padding-right: $TenPX; 
+
+    .nav-link {
+      color: $Deep_Grey_Blue;
+      font-size: $MediumEM;
+      padding-bottom: $TwentyPX;
+
+      &:hover {
+        font-weight: 700;
+        @include Hover-Underline();
+        padding-bottom: $TwentyPX;
+      }
+    }
+  }
+}
+
+.navbar-cart { 
+  @include FlexCenterAlign();
+  
+  .cart-qnty {
+    position: relative;
+    display: flex;
+    padding: 0 15px 20px 0;
+    background-color: transparent;
+    border: none;
+  }
+
+  .shopping-cart-button {
+    cursor: pointer;
+    color: $Dark_Navy;
+
+    &:hover {
+      color: $Orange;
+    }
+  }
+  
+  .avatar {
+    height: 50px;
+    padding-bottom: $TwentyPX;
+
+    &:hover {
+      border: 1px solid $Orange;
+    }
+  }
+
+  .cartIndicator {
+    font-size: 0.6rem;
+    position: absolute;
+    top: -5px;
+    right: 0;
+  }
+
+  .cart-indicator-active {
+    background-color: $Orange;
+    color: $White;
+    padding: 0.05rem 0.5rem;
+    font-size: 0.5em;
+    border-radius: 50px;
+  }
+}
+
+// ---------- NAVBAR - CART BASKET ---------- //
+.producstOnCart {
+	top: 60px;
+	right: 30px;
+	background-color: $White;
+	width: 375px;
+	height: 240px;
+	color: $Black;
+	z-index: 2000;
+	position: fixed;
+	text-align: center;
+	border-radius: 10px;
+	box-shadow: 0px 5px 8px 5px $Grey_Blue;
+	animation: fade 1s;
+
+  img {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+  }
+
+  .top {
+    text-align: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 30%;
+
+    &:after {
+      content: ""; 
+      display: block;
+      margin: 0 auto; 
+      width: 95%;
+      height: 90%;
+      border-bottom: 1px solid $Grey_Blue;
+    }
+
+    p {
+      position: absolute;
+      left: 10%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: $Black;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+  }
+
+  @keyframes fade {
+    from {top: 0px;}
+    to {top: 60px;}
+  }
+
+  .overlay {
+    overflow: hidden;
+    display: inline-block;
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+  }
+
+  .empty-cart-content {
+    padding: 30px 10px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    .cart-empty {
+      color: $Deep_Grey_Blue;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+
+  .cart-body-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+
+    .cart-product-title {
+      color: $Deep_Grey_Blue;
+      font-size: 1.1em;
+    }
+
+    .price-info {
+      display: flex;
+      align-items: baseline;
+
+      span {
+        padding-right: 5px;
+        text-align: center;
+      }
+
+      #total {
+        font-weight: bold;
+      }
+    }
+
+    .fa-trash-alt {
+      font-size: $RegularEM; 
+      color: $Grey_Blue;
+
+      &:hover {
+        color: $Orange;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .checkout {
+    display: block;
+    width: 90%;
+    color: $White;
+    background-color: $Orange;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 12px 5px;
+    border-radius: 10px;
+    margin: 10px auto;
+
+    &:hover {
+      box-shadow: 0 2px 15px $Orange;
+      color: $White;
+    }
+  }
+}
+
+.stopScrolling {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hide {
+  display: none;
+  visibility: none;
+}

@@ -1,0 +1,114 @@
+// ---------- PRODUCT CONTENT - INFORMATION ---------- //
+.product-information-container{
+  padding: 15% 13%;
+
+  .header-title {
+    color: $Orange;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin: $ZeroPX;
+    padding-bottom: $TwentyPX;
+    font-size: $RegularEM;
+  }
+
+  .product-name {
+    font-weight: 700;
+    padding-bottom: $TwentyPX;
+    font-size: 2.5em;
+  }
+
+  .product-info {
+    color: $Deep_Grey_Blue;
+    font-size: $RegularEM;
+    padding-bottom: $TwentyPX;
+    line-height: 2;
+  }
+
+  .price-container {
+    @include FlexCenterAlign();
+    padding-bottom: 5px;
+
+    .new-price {
+      color: $Dark_Navy;
+      font-weight: 700;
+      padding-right: $TenPX;
+      margin: $ZeroPX;
+    }
+
+    .reduced-percent {
+      margin: $ZeroPX;
+      background-color: $Pale_Orange;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: $MediumEM;
+      font-weight: 700;
+      color: $Orange;
+    }
+  }
+
+  .old-price {
+    color: $Grey_Blue;
+    font-style: italic;
+    font-size: $MediumEM;
+    text-decoration: line-through;
+    padding-bottom: $TwentyPX;
+  }
+
+  .col-xl-4, .col-xl-8 { padding: 0 5px; }
+
+  .quantity-button {
+    height: 50px;
+    background-color: $Light_Grey_Blue;
+    @include FlexAlignCenSB();
+    border-radius: $TenPX;
+
+    .amt {
+      background-color: transparent;
+      border: none;
+      color: $Orange;
+    
+      &:hover {
+        color: $Grey_Blue;
+      } 
+
+      &[disabled] {
+        cursor: default;
+        color: $Grey_Blue;
+      }
+    }
+    
+    .fa-minus { padding-left: $TwentyPX; } 
+    
+    .fa-plus { padding-right: $TwentyPX; } 
+
+    .quantity-num {
+      color: $Dark_Navy;
+      font-weight: 700;
+      font-size: $RegularEM;
+    }
+    
+  }
+
+  .cart-button {
+    background-color: $Orange;
+    display: block;
+    padding: $ZeroPX;
+    width: 100%;
+    height: 50px;
+    border-radius: $TenPX;
+    color: $White;
+    font-size: $RegularEM;
+
+    &:hover {
+      box-shadow: 0 2px 15px $Orange;
+      color: $White;
+      font-weight: 700;
+    }
+
+    .cart-icon {
+      color: $White;
+      padding-right: $TenPX;
+    }
+  }
+}

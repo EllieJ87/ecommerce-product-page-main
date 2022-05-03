@@ -1,0 +1,29 @@
+@mixin Hover-Underline {
+	color: $Dark_Navy;
+	border-bottom: 3px solid $Orange;    
+}
+
+@mixin NoPadLeftRight {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+@mixin PadMarginZero {
+	padding: 0;
+	margin: 0;
+}
+
+@mixin FlexCenterAlign {
+	display: flex;
+	align-items: center;
+}
+
+@mixin FlexAlignCenSB {
+	@include FlexCenterAlign;
+	justify-content: space-between;
+}
+
+@mixin FlexCenterSelf {
+	display: flex; 
+	align-self: center;
+}

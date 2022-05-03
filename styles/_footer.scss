@@ -1,0 +1,55 @@
+footer {
+  align-content: center;
+  position: fixed;
+  bottom: $ZeroPX;
+  left: $ZeroPX;
+  padding-bottom: $TwentyPX;
+
+  .footer-links {
+    @include FlexCenterSelf();
+    justify-content: flex-start; 
+    padding-left: 50px;
+
+    .bi-linkedin {
+      font-size: 1.2em;
+      color: $Grey_Blue;
+      text-decoration: none;
+      margin-right: $TwentyPX;
+
+      &:hover {
+        color: $Orange;
+      }
+    }
+
+    .bi-github {
+      font-size: 1.2em;
+      color: $Grey_Blue;
+      text-decoration: none;
+
+      &:hover {
+        color: $Orange;
+      }
+    }
+  }
+
+  .footer-text {
+    @include FlexCenterSelf();
+    justify-content: flex-end; 
+    padding-right: 50px;
+  }
+
+  .copyright-footer {
+    color: $Grey_Blue;
+    font-size: $SmallEM;
+
+    a {
+      color: $Grey_Blue;
+      text-decoration: none;
+
+      &:hover {
+        font-weight: 700;
+        color: $Orange;
+      }
+    }
+  }
+}

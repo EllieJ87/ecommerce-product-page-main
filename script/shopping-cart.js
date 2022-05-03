@@ -78,13 +78,13 @@ function updateCartState(){
 }
 
 function handleAmtBtnClick(e){
-  if(e.currentTarget.id === 'amt--decrease'){
+  if(e.currentTarget.id === 'amtDecrease'){
     amt === 0 ? e.currentTarget : amt--;
   } else {
     amt++;
   }
   qty.textContent = amt;
-  const amtDecreaseBtn = document.querySelector('#amt--decrease');
+  const amtDecreaseBtn = document.querySelector('#amtDecrease');
   if(amt === 0){
     amtDecreaseBtn.setAttribute('disabled', 'true');
   } else {

@@ -1,0 +1,48 @@
+.product {
+  margin-top: 100px;
+  padding: 0 50px;
+  
+  .product-image-container, .col-3 { 
+    padding: 0 10px; 
+
+    .product-image {
+      border-radius: $TwentyPX;
+      cursor: pointer;
+    }
+  }
+
+  .thumbnail-container {
+    display: inline-flex;
+    margin-top: $TwentyPX;
+
+    .thumbnail-image-container {
+      position: relative;
+      box-sizing: border-box;
+
+      .img-thumbnail {
+        border: none;
+        padding: $ZeroPX;
+      }
+
+      .thumbnail {
+        cursor: pointer;
+        display: block;
+        border-radius: $TwentyPX;
+        border: 3px solid transparent;
+
+        &:hover {
+          opacity: 0.6;
+          background-color: $White;
+          border: 3px solid $Orange;
+        }
+      }
+
+      .active {
+        opacity: 0.6;
+        background-color: $White;
+        border: 3px solid $Orange;
+      }
+    }
+  }
+
+}

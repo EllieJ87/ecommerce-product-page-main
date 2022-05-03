@@ -1,0 +1,172 @@
+@media (max-width: 575px) {  
+  
+  .navbar {
+    padding: 5px 5px;
+    height: auto;
+    
+    .navbar-container {
+      border-bottom: none;
+      padding: $ZeroPX;  
+
+      .mobile-nav { 
+        @include FlexCenterAlign(); 
+        
+        .header-img { 
+          padding-bottom: $ZeroPX;
+        }
+      }
+
+      .navbar-cart {
+        border: 2px solid red;
+
+        .shopping-cart-button {
+          border: 2px solid yellow;
+        }
+
+        .avatar {
+          height: 30px;
+          padding-bottom: $ZeroPX;
+          padding-right: $TwentyPX;
+        }
+      }
+
+      .navbar-nav { 
+        padding-left: $TenPX; 
+
+        .nav-link {
+          font-weight: bold;
+          color: $Black;
+          padding: 10px 0;
+        }
+      }
+      
+      .fa-xmark { padding-top: $TwentyPX; }
+    }
+
+    .producstOnCart {
+      right: 20px;
+      width: 90vw;
+    }
+  }
+
+  .product {
+    margin-top: 50px;
+    padding: $ZeroPX;
+
+    .row { 
+      overflow-x: hidden; 
+
+      .product-image-container {
+        @include NoPadLeftRight;
+        width: 100vw;
+        @include FlexCenterAlign();
+        justify-content: center;
+      }
+
+      .thumbnail-container { display: none }
+    }
+  }
+
+  .product-button {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid purple;
+  }
+
+  footer {
+    font-size: $MediumEM;
+    position: relative;
+
+    .footer-text, .footer-links {
+      justify-content: center;
+      padding: 5px;
+  }
+}
+  
+  //  ------------------- TO BE CHANGED ------------
+  .desktop {
+    display: none;
+  }
+    
+  .mobile-carousel {
+    display: block;
+  }
+    
+  .carousel {
+    border: 2px solid red;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+  }
+    
+  .slide {
+    border: 2px solid yellow;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: 200ms opacity ease-in-out;
+    transition-delay: 200ms;
+  }
+    
+  .slide img {
+    border: 2px solid green;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+    
+  .slide[data-active] {
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0ms;
+  }
+    
+  .carousel-button {
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+    font-size: 4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    border-radius: .25rem;
+    padding: 0 .5rem;
+    background-color: rgba(0, 0, 0, .1);
+  }
+    
+  .carousel-button:hover {
+    color: white;
+    background-color: rgba(0, 0, 0, .2);
+  }
+  
+  .carousel-button.prev {
+    left: 1rem;
+  }
+    
+  .carousel-button.next {
+    right: 1rem;
+  }
+
+  // .toggle-buttons {
+  //     z-index: 1;
+  //     position: absolute;
+  //     width: 100%;
+  //     @include FlexAlignCenSB();
+  //     padding: 0 20px;
+  // }
+  
+  // .fa-angle-left, .fa-angle-right {
+  //     background-color: $White;
+  //     border-radius: 50%;
+  //     padding: 10px 15px;
+  //     cursor: pointer;
+  // }
+  
+  // .fa-angle-left, .fa-angle-right {
+  //     display: inline-block;
+  // }
+  
+  // .product-image { border-radius: $ZeroPX; }
+}

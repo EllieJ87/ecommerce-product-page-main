@@ -1,0 +1,61 @@
+@media (min-width: 820px) and (max-width: 1180px) {
+  .product-information-container { padding: $ZeroPX; }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) and (orientation: landscape) {
+  footer {
+      position: relative;
+      margin-top: $TwentyPX;
+  }
+}
+
+@media (min-width: 912px) and (max-width: 1368px) and (orientation: landscape) {
+  
+  .quantity-button { 
+    margin-right: $ZeroPX; 
+
+    .fa-minus { padding-left: $TenPX; } 
+  
+    .fa-plus { padding-right: $TenPX; } 
+  }
+  
+  .cart-button { margin-left: $ZeroPX; }
+}
+
+@media (min-width: 280px) and (max-width: 823px) and (orientation: landscape) {
+    .navbar { 
+      padding-top: $TenPX; 
+
+      .nav-link {
+        font-weight: bold;
+        color: $Black;
+        padding: 10px 0;
+      }
+      
+      .header-img, .avatar, .nav-cart  {
+        padding-top: 5px;
+        padding-bottom: $TenPX;
+      }
+    }
+    
+    .product { 
+      margin-top: 75px; 
+
+      .thumbnail-container { 
+        display: none 
+      }
+
+      .product-button {
+        display: flex;
+        flex-direction: column;
+        border: 2px solid aqua;
+      }
+    }
+
+    footer {
+        font-size: $MediumEM;
+        position: relative;
+
+        .footer-text { @include NoPadLeftRight; }
+    }
+}

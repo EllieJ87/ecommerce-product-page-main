@@ -14,16 +14,34 @@ for (let i = 0; i < thumbnails.length; i++) {
   })
 }
 
+const buttons = document.querySelectorAll("[data-carousel-button]")
+
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    const offset = button.dataset.carouselButton === "next" ? 1 : -1
+    const slides = button
+    .closest("[data-carousel")
+    .querySelector("[data-slides]")
+
+    const activeSlide = slides.querySelector("[data-active]")
+    let newIndex = [...slides.children].indexOf(activeSlide) + offset
+    if (newIndex < 0) newIndex = slides.children.length -1
+    if (newIndex >= slides.children.length) newIndex = 0
+
+    slides.children[newIndex].dataset.active = true
+    delete activeSlide.dataset.active
+
+  })
+})
+
 // ------------------- LIGHTBOX -----------------//
 const lightBox = document.getElementById("lightBox")
 
 const openLightBox = () => {
-  // lightBox.style.display = "block";
   lightBox.classList.add("testing-active");
 }
 
 const closeLightBox = () => {
-  // lightBox.style.display = "none";
   lightBox.classList.remove("testing-active");
 }
 
@@ -58,41 +76,3 @@ const plusSlides = (img) => {
 const currentSlide = (img) => {
   showSlides(slideIndex = img);
 }
-
-// ------------  CERTAIN WINDOW SIZE -------- //
-// const elem = document.getElementById('thumb-1');
-
-// document.getElementById('main-img').onclick = function () {
-
-//     if (!$(window).width() >= 700) {
-//         document.getElementById('thumb-1').style.display = 'none'
-//         console.log("thumbnail has been removed")
-//     } else if (!$(window).width() >= 700) {
-//         console.log("thumbnail is here")
-
-//     }
-//     console.log("image has been clicked!")
-// }
-
-// 575px
-
-// const mq = window.matchMedia( "(min-width: 700px)");
-
-// document.getElementById('main-img').onclick = function () {
-//     if (mq.matches) {
-//         // document.getElementById('img-container').style.display = 'none';
-//         document.getElementById('img-container').style.backgroundColor = "red";
-//         console.log('image has been clicked!');
-//     } else {
-//         console.log('thumbnail is here');
-//     }
-// }
-
-
-
-// if(screen.width<1026){//get the screen width
-//     //get element form document
-//     elem.style.display == 'none'//toggle visibility
-//  }
-
-
