@@ -51,7 +51,7 @@ openShopCart.addEventListener('click', () => {
 	document.querySelector('body').classList.toggle('stopScrolling');
 });
 
-const overlay = document.querySelector('.overlay');
+const overlay = document.querySelector('.cart-overlay');
 overlay.addEventListener('click', closeCart);
 
 const cartPanel = document.querySelector('#cartPanel');

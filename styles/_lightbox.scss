@@ -1,115 +1,47 @@
-// WILL CHANGE ------------------------------------------------------------
-.mobile-carousel {
-  display: none;
-}
-// ------------------------------------------------------------
-
-// WILL CHANGE ------------------------------------------------------------
-// ---------- PRODUCT CONTENT - LIGHTBOX GALLERY ---------- //
-#lightBox {
+.overlay {
   position: absolute;
-  z-index: 3000;
   top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0,0,0,.75);
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .overlay-close {
+    width: 57rem;
+    text-align: end;
+    padding: 2rem 0;
+    
+    i {
+      cursor: pointer;
+      filter: brightness(300%);
+    }
+  }
+
+  .lightbox-container {
+    max-width: 57rem;
+
+    .next {
+      display: flex;
+      right: 0;
+      transform: translateX(50%);
+    }
+
+    .previous {
+      display: flex;
+      left: 0;
+      transform: translateX(50%);
+    }
+
+    .arrow {
+      top: 40%;
+    }
+  }    
+}
+
+.hidden {
   display: none;
-  overflow: hidden;
 }
-
-#lightBox.testing-active {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.lightbox-container {
-  max-width: 45rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.mySlides {
-  padding: 10px;
-  max-width: 45rem;
-}
-
-.main-lightbox-img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-.thumbnail-lightbox-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  justify-content: center;
-  margin-top: $TwentyPX;
-  width: 100%;
-  height: auto;
-}
-
-.lb-thumbnail-image {
-  padding: 10px;
-}
-
-.thumbnail-lightbox {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-/* The Close Button */
-.close {
-  color: white;
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-}
-  
-.close:hover,
-.close:focus {
-  color: #999;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* Next & previous buttons */
-.lb-toggle-buttons {
-  z-index: 1;
-  position: absolute;
-  top: 42%;
-  max-width: 45rem;
-  width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
-  color: black;
-}
-
-.fa-angle-left, .fa-angle-right {
-  background-color: White;
-  border-radius: 50%;
-  padding: 10px 14px;
-  cursor: pointer;
-}
-
-.thumbnail-lightbox {
-  opacity: 1;
-}
-
-.active,
-.thumbnail-lightbox:hover {
-  opacity: 0.6;
-}
-// ----------------------------------------------------------------

@@ -37,7 +37,7 @@
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
               <div class="offcanvas-header">
                 <button id="close-btn" type="button" data-bs-dismiss="offcanvas" aria-label="Close">
-                  <i id="xmark" class="fa fa-solid fa-xmark"></i>
+                  <i class="bi bi-x xmark"></i>
                 </button>
               </div>
               <div class="offcanvas-body">
@@ -67,14 +67,17 @@
                 <i class="bi bi-cart3 shopping-cart-button"></i>
               </button>
               <a href="#">
-                <img src="images/image-avatar.png" alt="avatar" class="avatar">
+                <div class="avatar-logo">
+                  <img src="images/image-avatar.png" alt="avatar" class="avatar">
+                </div>
+
               </a>
             </div>
 
-          </div><!--container-md navbar-container-->
+          </div>
 
           <div class="producstOnCart hide" id="cartPanel">
-            <div class="overlay"></div>
+            <div class="cart-overlay"></div><!--Change to a cart-overlay instead -->
             <div class="top">
               <p>Cart</p>
             </div>
@@ -111,115 +114,49 @@
           
           <div class="row">
             <div class="col-lg-6">
-              <div class="product-image-container">
-                <div class="desktop">
-                  <img src="images/image-product-1.jpg" alt="product-one" id="main-img" class="img-fluid product-image" onclick="openLightBox();currentSlide(1)"> 
+
+              <!-- lightbox div? -->
+              <div class="main-images-container">
+                <div class="product-image-container">
+                  <img id="main-img" class="img-fluid product-image" src="images/image-product-1.jpg" alt="image product">
                 </div>
 
-                <div class="mobile-carousel" aria-label="Newest Photos">
-                  <div class="carousel" data-carousel>
-            
-                    <button class="carousel-button prev" data-carousel-button="prev">
-                      <i class="fa fa-regular fa-angle-left"></i>
-                    </button>
-                    <button class="carousel-button next" data-carousel-button="next">
-                      <i class="fa fa-regular fa-angle-right"></i>
-                    </button>
-            
-                    <div data-slides>
-                      <div class="slide" data-active>
-                        <img src="images/image-product-1.jpg" alt="Shoe 1" class="img-fluid">
-                      </div>
-                      <div class="slide">
-                        <img src="images/image-product-2.jpg" alt="Shoe 2" class="img-fluid">
-                      </div>
-                      <div class="slide">
-                        <img src="images/image-product-3.jpg" alt="Shoe 3" class="img-fluid">
-                      </div>
-                      <div class="slide"> 
-                        <img src="images/image-product-4.jpg" alt="Shoe 4" class="img-fluid">
-                      </div>
+                <div class="previous arrow">
+                  <i class="fa fa-regular fa-angle-left"></i>                  
+                </div>
+  
+                <div class="next arrow">
+                  <i class="fa fa-regular fa-angle-right"></i>
+                </div>
+                
+                <div class="thumbnail-container">
+                  <div class="col-3">
+                    <div class="thumbnail-image-container">
+                      <img class="img-thumbnail thumbnail active" src="images/image-product-1.jpg" alt="thumb-one">
+                    </div>
+                  </div>
+                  <div class="col-3">
+                    <div class="thumbnail-image-container">
+                      <img class="img-thumbnail thumbnail" src="images/image-product-2.jpg" alt="thumb-two">
+                    </div>
+                  </div>
+                  <div class="col-3">
+                    <div class="thumbnail-image-container">
+                      <img class="img-thumbnail thumbnail" src="images/image-product-3.jpg" alt="thumb-three">
+                    </div>
+                  </div>
+                  <div class="col-3">
+                    <div class="thumbnail-image-container">
+                      <img class="img-thumbnail thumbnail" src="images/image-product-4.jpg" alt="product-one">
                     </div>
                   </div>
                 </div>
-              
+
               </div>
-
-
-              
-              <div class="thumbnail-container">
-                <div class="col-3">
-                  <div class="thumbnail-image-container">
-                    <img src="images/image-product-1.jpg" alt="thumb-one" class="img-thumbnail thumbnail active" onclick="openLightBox();currentSlide(1)">
-                  </div>
-                </div>
-                <div class="col-3">
-                  <div class="thumbnail-image-container">
-                    <img src="images/image-product-2.jpg" alt="thumb-two" class="img-thumbnail thumbnail" onclick="openLightBox();currentSlide(2)">
-                  </div>
-                </div>
-                <div class="col-3">
-                  <div class="thumbnail-image-container">
-                    <img src="images/image-product-3.jpg" alt="thumb-three" class="img-thumbnail thumbnail" onclick="openLightBox();currentSlide(3)">
-                  </div>
-                </div>
-                <div class="col-3">
-                  <div class="thumbnail-image-container">
-                    <img src="images/image-product-4.jpg" alt="product-one" class="img-thumbnail thumbnail" onclick="openLightBox();currentSlide(4)">
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <div id="lightBox" class="light-box">
-              <div class="lightbox-container">
-                <i class="bi bi-x close" onclick="closeLightBox()"></i>
-
-                  <div class="mySlides">
-                    <img src="images/image-product-1.jpg" alt="product-one" class="img-fluid main-lightbox-img">
-                  </div>
-
-                  <div class="mySlides">
-                    <img src="images/image-product-2.jpg" alt="product-one" class="img-fluid main-lightbox-img">
-                  </div>
-
-                  <div class="mySlides">
-                    <img src="images/image-product-3.jpg" alt="product-one" class="img-fluid main-lightbox-img">
-                  </div>
-
-                  <div class="mySlides">
-                    <img src="images/image-product-4.jpg" alt="product-one" class="img-fluid main-lightbox-img">
-                  </div>
-
-                  <div class="lb-toggle-buttons">
-                    <i class="fa fa-regular fa-angle-left prev" onclick="plusSlides(-1)"></i>
-                    <i class="fa fa-regular fa-angle-right next" onclick="plusSlides(1)"></i>
-                  </div>
-                  
-                  <div class="thumbnail-lightbox-container">
-                      <div class="lb-thumbnail-image">
-                        <img src="images/image-product-1.jpg" alt="thumb-one" class="thumbnail-lightbox active" onclick="currentSlide(1)"">
-                      </div>
-                      <div class="lb-thumbnail-image">
-                        <img src="images/image-product-2.jpg" alt="thumb-two" class="thumbnail-lightbox" onclick="currentSlide(2)">
-                      </div>
-
-                      <div class="lb-thumbnail-image">
-
-                        <img src="images/image-product-3.jpg" alt="thumb-three" class="thumbnail-lightbox" onclick="currentSlide(3)">
-                      </div>
  
-                      <div class="lb-thumbnail-image">
-                        <img src="images/image-product-4.jpg" alt="product-one" class="thumbnail-lightbox" onclick="currentSlide(4)">
-                      </div>
 
-                  </div>
-                
-              </div>
+
             </div>
-
-
             
             <div class="col-lg-6">
               <div class="product-information-container">
@@ -259,6 +196,13 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <!-- LightBox Overlay -->
+          <div class="lightbox-overlay hidden">
+            <div class="overlay-close">
+              <i id="overlayClose" class="bi bi-x xmark"></i>
             </div>
           </div>
 
