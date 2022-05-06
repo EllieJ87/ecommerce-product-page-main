@@ -65,13 +65,54 @@
   .product {
     margin-top: 50px;
     padding: $ZeroPX;
+    position: relative;
 
     .product-image-container {
       @include NoPadLeftRight;
       width: 100vw;
       max-width: 100%;
 
-      .product-image { border-radius: $ZeroPX; }
+      .product-image { 
+        border-radius: $ZeroPX;
+        cursor: default; 
+      }
+    }
+
+    .previous {
+      left: 3%;
+      
+      &:hover {
+        color: $Orange;
+        left: 2%;
+      }
+    }
+    
+    .next {
+      right: 3%;
+      
+      &:hover {
+        color: $Orange;
+        right: 2%;
+      }
+    }
+    
+    .arrow {
+      position: absolute;
+      top: 25%;
+      transform: translateY(-50%);
+  
+      background-color: $White;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+  
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      cursor: pointer;
+  
+      transition: all 0.3s ease;
     }
 
     .thumbnail-container { 

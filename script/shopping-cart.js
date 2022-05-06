@@ -37,6 +37,29 @@ const checkoutState = {
     `
 }
 
+const Toast = {
+  init() {
+    this.hideTimeout = null;
+
+    this.el = document.createElement('div')
+    this.el.className = 'toast-container'
+    document.body.appendChild(this.el)
+  },
+
+  show(message) {
+    clearTimeout(this.hideTimeout)
+    this.el.textContent = message;
+    this.el.className = 'toast-container toast--visible'
+
+    this.hideTimeout = setTimeout(() => {
+      this.el.classList.remove('toast--visible')
+    }, 3000)
+
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => Toast.init());
+
 // ------------------- SHOPPING CART TOGGLE -----------------//
 const closeCart = () => {
 	const cart = document.querySelector('#cartPanel');
@@ -73,7 +96,7 @@ function updateCartState(){
     cartIndicator.textContent = total;
     cartIndicator.classList.add('cart-indicator-active');
     productTotal.textContent = `$${total * PRICE}.00`;
-    alert(`${amt} Added to Cart`)
+    Toast.show(`${amt} Added to Cart`)
   }
 }
 
@@ -105,11 +128,16 @@ cartPanel.addEventListener('click', (e) => {
     amt = 0;
     total = 0;
     updateCartState();
-    alert('Items removed from cart.')
+    Toast.show('Items removed from Cart')
+    closeCart();
+    qty.textContent = amt;
   } else if (e.target === document.querySelector('#checkout')) {
     amt = 0;
     total = 0;
     updateCartState();
-    alert('Thank you for your purchase!')
+    Toast.show('Thank you for your purchase!')
+    closeCart();
+    qty.textContent = amt;
   }
 });
+

@@ -12,7 +12,6 @@
     .header-title { padding: $TenPX; }
 
     .product-name { font-size: 1.8em; }
-
   }
   
   .product-name, .product-info, .price-container, .old-price {
@@ -35,10 +34,25 @@
 
       .footer-links { padding-left: $TenPX; }
   }
-  
 }
 
 @media (max-width: 796px) {
+
+  .navbar { 
+    padding-bottom: $TenPX; 
+    
+    .header-img {
+      padding-bottom: 10px!important;
+    }
+    
+    .cart-qnty {
+      padding: 0 10px 10px 0;
+    }
+    
+    .avatar-logo  {
+      padding-bottom: 10px;
+    }
+  }
 
   .quantity-button { margin: 0 0 5px 0; }
   

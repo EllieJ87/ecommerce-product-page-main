@@ -17,7 +17,6 @@ thumbnailClick = (event) => {
   event.target.parentElement.classList.add('active')
   mainImage.src = event.target.src.replace('-thumbnail', '')
 }
-// NOT ADDING THE ACTIVE CLASS .. :(
 
 nextBtnClick = () => {
   let imageIndex = getCurrentImageIndex()
@@ -52,7 +51,6 @@ setMainImage = (imageIndex) => {
 
 MainImageClick = () => {
   if(window.innerWidth >= 800) {
-    console.log('image clicked')
     if(lightBoxOverlay.childElementCount == 1) {
       const newLightbox = mainImagesContainer.cloneNode(true)
       lightBoxOverlay.appendChild(newLightbox)
@@ -67,20 +65,11 @@ MainImageClick = () => {
         img.addEventListener('click', lightboxThumbnailClick)
       })
 
-      /*
-      lightboxGallery = overlay.querySelectorAll('.pic');
-      lightboxHero = overlay.querySelector('.product-hero');
-      lightboxGallery.forEach(img => {
-        // new click event for the thumbnail images (shuold be the same function as above)
-        img.addEventListener('click', onThumbClickLightbox);
-      }); 
-      */
-
-      const lightboxNextBtn = document.querySelector('.next')
-      const lightboxPreviousBtn = document.querySelector('.previous')
+      const lightboxNextBtn = lightBoxOverlay.querySelector('.next')
+      const lightboxPreviousBtn = lightBoxOverlay.querySelector('.previous')
 
       lightboxNextBtn.addEventListener('click', lightboxNextBtnClick)
-      lightboxPreviousBtn.addEventListener('click', lightboxNextBtnClick)
+      lightboxPreviousBtn.addEventListener('click', lightboxPreviousBtnClick)
     }
 
     lightBoxOverlay.classList.remove('hidden')
@@ -108,7 +97,7 @@ lightboxNextBtnClick = () => {
   lightboxSetMainImage(imageIndex)
 }
 
-lightboxNextBtnClick = () => {
+lightboxPreviousBtnClick = () => {
   let imageIndex = lightboxGetCurrentImageIndex()
   imageIndex--
   if (imageIndex < 1) {
@@ -118,7 +107,7 @@ lightboxNextBtnClick = () => {
 }
 
 lightboxGetCurrentImageIndex = () => {
-  const imageIndex = parseInt(lightboxMainImage.src.split('\\').pop().split('/').pop().replace('.jpg', '').replace('image-product', ''))
+  const imageIndex = parseInt(lightboxMainImage.src.split('\\').pop().split('/').pop().replace('.jpg', '').replace('image-product-', ''))
   return imageIndex
 }
 

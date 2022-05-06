@@ -23,39 +23,91 @@
 }
 
 @media (min-width: 280px) and (max-width: 823px) and (orientation: landscape) {
-    .navbar { 
-      padding-top: $TenPX; 
+  
+  .navbar { 
+    padding-top: $TenPX; 
+    padding-bottom: $TwentyPX; 
+    
+    .navbar-container {
+      padding-bottom: $TenPX; 
+    }
+    
+    .nav-link {
+      font-weight: bold;
+      color: $Black;
+      padding: 5px 0;
+    }
+    
+    .header-img {
+      padding-bottom: 5px!important;
+    }
+    
+    .cart-qnty {
+      padding: 0 10px 5px 0;
+    }
+    
+    .avatar-logo  {
+      padding-bottom: 5px;
+    }
+  }
+  
+  .product { 
+    margin-top: 75px; 
+    position: relative;
 
-      .nav-link {
-        font-weight: bold;
-        color: $Black;
-        padding: 10px 0;
-      }
+    .previous {
+      left: 3%;
       
-      .header-img, .avatar, .nav-cart  {
-        padding-top: 5px;
-        padding-bottom: $TenPX;
+      &:hover {
+        color: $Orange;
+        left: 2%;
       }
     }
     
-    .product { 
-      margin-top: 75px; 
-
-      .thumbnail-container { 
-        display: none 
-      }
-
-      .product-button {
-        display: flex;
-        flex-direction: column;
-        border: 2px solid aqua;
+    .next {
+      right: 3%;
+      
+      &:hover {
+        color: $Orange;
+        right: 2%;
       }
     }
-
-    footer {
-        font-size: $MediumEM;
-        position: relative;
-
-        .footer-text { @include NoPadLeftRight; }
+    
+    .arrow {
+      position: absolute;
+      top: 25%;
+      transform: translateY(-50%);
+  
+      background-color: $White;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+  
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      cursor: pointer;
+  
+      transition: all 0.3s ease;
     }
+    
+    .thumbnail-container { 
+      display: none 
+    }
+    
+    .product-button {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  
+  footer {
+    font-size: $MediumEM;
+    position: relative;
+    
+    .footer-text { 
+      @include NoPadLeftRight; 
+    }
+  }
 }
