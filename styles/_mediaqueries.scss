@@ -1,46 +1,73 @@
 // ---------- MEDIA QUERIES ---------- //
 @media (max-width: 991px) {
-
-  // /* TOAST CSS */
-.toast-container {
-  right: 10%;
-}
-
-  .producstOnCart { right: 10%; }
-
-  .product-image-container { padding-bottom: $TenPX; }
   
-  .col-3 { margin-bottom: 15px; }
+  .product {
+    margin-top: 100px;
+  }
+  
+  .toast-container {
+    right: 5%;
+  }
+  
+  .producstOnCart { 
+    right: 5%; 
+  }
 
-  .thumbnail-container { margin-top: 5px; }
+  .product-image-container { 
+    padding-bottom: $TenPX; 
+  }
+  
+  .col-3 { 
+    margin-bottom: 15px; 
+  }
+
+  .thumbnail-container { 
+    margin-top: 5px; 
+  }
 
   .product-information-container { 
     padding: 0 20px; 
 
-    .header-title { padding: $TenPX; }
+    .header-title { 
+      padding: $TenPX; 
+    }
 
-    .product-name { font-size: 1.8em; }
+    .product-name { 
+      font-size: 1.8em; 
+    }
   }
   
-  .product-name, .product-info, .price-container, .old-price {
+  .product-name, .product-info, .price-container {
       padding: 5px 10px;
   }
   
-  .new-price { font-size: 1.6em; }
+  .new-price { 
+    font-size: 1.6em; 
+  }
   
-  .old-price { font-size: $MediumEM; }
+  .old-price { 
+    font-size: $MediumEM; 
+  }
 
-  .quantity-button { margin-right: $ZeroPX; }
+  .quantity-button { 
+    margin-right: $ZeroPX; 
+  }
   
-  .cart-button { margin-left: $ZeroPX; }
+  .cart-button { 
+    margin-left: $ZeroPX; 
+  }
   
   footer {
       position: relative;
       padding-top: 50px;
 
-      .footer-text { padding-right: $TenPX; }
+      .footer-text { 
+        padding-right: $TenPX; 
+      }
 
-      .footer-links { padding-left: $TenPX; }
+      .footer-links { 
+        padding-left: $TenPX; 
+      }
   }
 }
 
@@ -48,10 +75,6 @@
 
   .navbar { 
     padding-bottom: $TenPX; 
-    
-    .header-img {
-      padding-bottom: 10px!important;
-    }
     
     .cart-qnty {
       padding: 0 10px 10px 0;
@@ -62,7 +85,11 @@
     }
   }
 
-  .quantity-button { margin: 0 0 5px 0; }
+  .quantity-button { 
+    margin: 0 0 5px 0; 
+  }
   
-  .cart-button { margin: 5px 0 0 0 ; }
+  .cart-button { 
+    margin: 5px 0 0 0 ; 
+  }
 }

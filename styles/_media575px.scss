@@ -136,9 +136,9 @@
       display: none 
     }
 
-    .product-button {
+    .price-container {
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;   
     }
   }
   

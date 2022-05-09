@@ -1,8 +1,12 @@
 @media (min-width: 820px) and (max-width: 1180px) {
-  .product-information-container { padding: $ZeroPX; }
+  
+  .product-information-container { 
+    padding: $ZeroPX; 
+  }
 }
 
 @media (min-width: 600px) and (max-width: 1024px) and (orientation: landscape) {
+  
   footer {
       position: relative;
       margin-top: $TwentyPX;
@@ -14,12 +18,18 @@
   .quantity-button { 
     margin-right: $ZeroPX; 
 
-    .fa-minus { padding-left: $TenPX; } 
+    .fa-minus { 
+      padding-left: $TenPX; 
+    } 
   
-    .fa-plus { padding-right: $TenPX; } 
+    .fa-plus { 
+      padding-right: $TenPX; 
+    } 
   }
   
-  .cart-button { margin-left: $ZeroPX; }
+  .cart-button { 
+    margin-left: $ZeroPX; 
+  }
 }
 
 @media (min-width: 280px) and (max-width: 823px) and (orientation: landscape) {
@@ -50,10 +60,10 @@
       padding-bottom: 5px;
     }
   }
-
-.toast-container {
-	right: 0;
-}
+  
+  .toast-container {
+    right: 0;
+  }
 
   .producstOnCart {
     right: 5%;

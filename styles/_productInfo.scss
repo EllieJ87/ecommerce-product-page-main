@@ -1,4 +1,3 @@
-// ---------- PRODUCT CONTENT - INFORMATION ---------- //
 .product-information-container{
   padding: 15% 13%;
 
@@ -26,36 +25,50 @@
   }
 
   .price-container {
-    @include FlexCenterAlign();
+    display: block;  
     padding-bottom: 5px;
 
-    .new-price {
-      color: $Dark_Navy;
-      font-weight: 700;
-      padding-right: $TenPX;
-      margin: $ZeroPX;
+    .new-price-container {
+      display: flex;
+      align-items: center;
+      padding-bottom: $TenPX;
+
+
+      .new-price {
+        color: $Dark_Navy;
+        font-weight: 700;
+        padding-right: $TenPX;
+        margin: $ZeroPX;
+      }
+  
+      .reduced-percent {
+        margin: $ZeroPX;
+        background-color: $Pale_Orange;
+        padding: 2px 5px;
+        border-radius: 6px;
+        font-size: $MediumEM;
+        font-weight: 900;
+        color: $Orange;
+      }
     }
 
-    .reduced-percent {
-      margin: $ZeroPX;
-      background-color: $Pale_Orange;
-      padding: 5px 10px;
-      border-radius: 6px;
-      font-size: $MediumEM;
-      font-weight: 700;
-      color: $Orange;
+    .old-price {
+      color: $Grey_Blue;
+      font-style: italic;
+      font-size: $RegularEM;
+      text-decoration: line-through;
+
+      p {
+        margin-top: 0;
+        margin-bottom: 0;
+
+      }
     }
   }
 
-  .old-price {
-    color: $Grey_Blue;
-    font-style: italic;
-    font-size: $MediumEM;
-    text-decoration: line-through;
-    padding-bottom: $TwentyPX;
+  .col-xl-4, .col-xl-8 { 
+    padding: 0 5px; 
   }
-
-  .col-xl-4, .col-xl-8 { padding: 0 5px; }
 
   .quantity-button {
     height: 50px;
@@ -78,16 +91,19 @@
       }
     }
     
-    .fa-minus { padding-left: $TwentyPX; } 
+    .fa-minus { 
+      padding-left: $TwentyPX; 
+    } 
     
-    .fa-plus { padding-right: $TwentyPX; } 
+    .fa-plus { 
+      padding-right: $TwentyPX; 
+    } 
 
     .quantity-num {
       color: $Dark_Navy;
       font-weight: 700;
       font-size: $RegularEM;
     }
-    
   }
 
   .cart-button {

@@ -35,6 +35,7 @@
               <img src="images/logo.svg" alt="logo" class="header-img d-inline-block img-fluid">
             </div>
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+              <!-- Error: The aria-labelledby attribute must point to an element in the same document. Bootstrap label -->
               <div class="offcanvas-header">
                 <button id="close-btn" type="button" data-bs-dismiss="offcanvas" aria-label="Close">
                   <i class="bi bi-x xmark"></i>
@@ -163,23 +164,26 @@
                   <p class="product-info">
                     These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.
                   </p>
-                  
-                  <span class="price-container">
-                    <h3 class="new-price">
-                      $<span>125.00</span>
-                    </h3>
-                    <span>
+
+                  <!-- Was an error as this was a span tag -->                  
+                  <div class="price-container">
+                    <div class="new-price-container">
+                      <h3 class="new-price">
+                        $<span>125.00</span>
+                      </h3>
+                      <!-- Was an error as this was a span tag --> 
                       <p class="reduced-percent">50%</p>
-                    </span>
-                  </span>
-                  <p class="old-price">$250.00</p>
+                    </div>
+                    <span class="old-price">$250.00</span>
+                  </div>
                   <div class="product-button">
                     <div class="row">
                       <div class="col-xl-4 col-md-6">
                         <div id="quantity-button" class="quantity-button">
-                          <button id="amtDecrease" class="fa fa-regular fa-minus amt" type="button" aria-label="Decrease quantity" disabled></button>
-                          <span id="qty" class="quantity-num" aria-label="Current Quantity">1</span>
-                          <button class="fa fa-regular fa-plus amt" type="button" aria-label="Increase quantity"></button>
+                          <!-- Possible misuse of aria-label: aria-label="Decrease quantity" -->
+                          <button id="amtDecrease" class="fa fa-regular fa-minus amt" type="button" disabled></button>
+                          <span id="qty" class="quantity-num">1</span>
+                          <button class="fa fa-regular fa-plus amt" type="button"></button>
                         </div>
                       </div>
                       <div class="col-xl-8 col-md-6">

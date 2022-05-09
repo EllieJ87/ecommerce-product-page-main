@@ -293,11 +293,10 @@
 
 .hide {
   display: none;
-  visibility: none;
 }
 
 .product {
-  margin-top: 100px;
+  margin-top: 150px;
   padding: 0 50px;
 }
 
@@ -499,38 +498,47 @@
 }
 
 .product-information-container .price-container {
+  display: block;
+  padding-bottom: 5px;
+}
+
+.product-information-container .price-container .new-price-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 }
 
-.product-information-container .price-container .new-price {
+.product-information-container .price-container .new-price-container .new-price {
   color: #1D2025;
   font-weight: 700;
   padding-right: 10px;
   margin: 0;
 }
 
-.product-information-container .price-container .reduced-percent {
+.product-information-container .price-container .new-price-container .reduced-percent {
   margin: 0;
   background-color: #FFEDE0;
-  padding: 5px 10px;
+  padding: 2px 5px;
   border-radius: 6px;
   font-size: 0.8em;
-  font-weight: 700;
+  font-weight: 900;
   color: #FF7D1A;
 }
 
-.product-information-container .old-price {
+.product-information-container .price-container .old-price {
   color: #B6BCC8;
   font-style: italic;
-  font-size: 0.8em;
+  font-size: 1em;
   text-decoration: line-through;
-  padding-bottom: 20px;
+}
+
+.product-information-container .price-container .old-price p {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .product-information-container .col-xl-4, .product-information-container .col-xl-8 {
@@ -674,11 +682,14 @@ footer .copyright-footer a:hover {
 }
 
 @media (max-width: 991px) {
+  .product {
+    margin-top: 100px;
+  }
   .toast-container {
-    right: 10%;
+    right: 5%;
   }
   .producstOnCart {
-    right: 10%;
+    right: 5%;
   }
   .product-image-container {
     padding-bottom: 10px;
@@ -698,7 +709,7 @@ footer .copyright-footer a:hover {
   .product-information-container .product-name {
     font-size: 1.8em;
   }
-  .product-name, .product-info, .price-container, .old-price {
+  .product-name, .product-info, .price-container {
     padding: 5px 10px;
   }
   .new-price {
@@ -728,9 +739,6 @@ footer .copyright-footer a:hover {
 @media (max-width: 796px) {
   .navbar {
     padding-bottom: 10px;
-  }
-  .navbar .header-img {
-    padding-bottom: 10px !important;
   }
   .navbar .cart-qnty {
     padding: 0 10px 10px 0;
@@ -871,14 +879,13 @@ footer .copyright-footer a:hover {
   .product .thumbnail-container {
     display: none;
   }
-  .product .product-button {
+  .product .price-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   footer {
     font-size: 0.8em;
