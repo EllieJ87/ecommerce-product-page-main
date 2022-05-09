@@ -123,7 +123,7 @@
 
 .producstOnCart {
   top: 60px;
-  right: 30px;
+  right: 18%;
   background-color: #FFFFFF;
   width: 375px;
   height: 240px;
@@ -674,6 +674,12 @@ footer .copyright-footer a:hover {
 }
 
 @media (max-width: 991px) {
+  .toast-container {
+    right: 10%;
+  }
+  .producstOnCart {
+    right: 10%;
+  }
   .product-image-container {
     padding-bottom: 10px;
   }
@@ -776,10 +782,10 @@ footer .copyright-footer a:hover {
   }
   .navbar .navbar-container .navbar-cart .avatar-logo {
     padding-bottom: 0;
+    padding-right: 5px;
   }
   .navbar .navbar-container .navbar-cart .avatar-logo .avatar {
     height: 30px;
-    padding-right: 5px;
   }
   .navbar .navbar-container .navbar-nav {
     padding-left: 10px;
@@ -793,9 +799,23 @@ footer .copyright-footer a:hover {
     color: #FF7D1A;
     border-bottom: none;
   }
-  .navbar .producstOnCart {
+  .toast-container {
+    right: 0;
+  }
+  .producstOnCart {
     right: 20px;
-    width: 80vw;
+    width: 85vw;
+    position: fixed;
+  }
+  .producstOnCart .top {
+    position: relative;
+    top: 0;
+  }
+  .producstOnCart .cart-body-content {
+    padding: 5px 15px;
+  }
+  .producstOnCart .cart-body-content .cart-product-title {
+    font-size: 1em;
   }
   .product {
     margin-top: 50px;
@@ -922,6 +942,12 @@ footer .copyright-footer a:hover {
   .navbar .avatar-logo {
     padding-bottom: 5px;
   }
+  .toast-container {
+    right: 0;
+  }
+  .producstOnCart {
+    right: 5%;
+  }
   .product {
     margin-top: 75px;
     position: relative;
@@ -1013,7 +1039,7 @@ body {
   padding: 10px;
   position: fixed;
   z-index: 5000;
-  right: 30px;
+  right: 18%;
   top: 60px;
   font-size: 0.7em;
   font-weight: bold;

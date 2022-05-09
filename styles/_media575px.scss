@@ -31,11 +31,10 @@
 
         .avatar-logo {
           padding-bottom: $ZeroPX;
+          padding-right: 5px;
       
           .avatar {
-            height: 30px;
-            padding-right: 5px;
-        
+            height: 30px;        
           }
         }
       }
@@ -55,10 +54,28 @@
         }
       }
     }
-    
-    .producstOnCart {
-      right: 20px;
-      width: 80vw;
+  }
+
+  .toast-container {
+    right: 0;
+  }
+
+  .producstOnCart {
+    right: 20px;
+    width: 85vw;
+    position: fixed;
+  
+    .top {
+      position: relative;
+      top: 0; 
+    }
+  
+    .cart-body-content {
+      padding: 5px 15px;
+  
+      .cart-product-title {
+        font-size: 1em;
+      }
     }
   }
 

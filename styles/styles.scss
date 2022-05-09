@@ -35,15 +35,13 @@ body {
   padding: 10px;
   position: fixed;
   z-index: 5000;
-  right: 30px;
+  right: 18%;
   top: 60px;
   font-size: 0.7em;
 	font-weight: bold;
-
 	visibility: hidden;
 	opacity: 0;
-	// transition: opacity 0.2s, top 0.2s, visibility 0.2s;
-	}
+}
 
 	.toast--visible {
 		top: 60px;
