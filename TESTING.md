@@ -302,7 +302,7 @@ I used my own phone to test the orientation and how the site differs from portra
 
 To test my whole website, I went through each page, feature by feature, and documented the results on a spreadsheet. The spreadsheet also documents any responsive features and confirms that they work and appear as intended on different screen sizes. The link to the spreadsheet it below:
 
-Responsive testing-checklist [here](.pdf)
+Responsive testing-checklist [here](https://github.com/EllieJ87/ecommerce-product-page-main/blob/master/readme-docs/Testing/testing-checklist.pdf)
 
 ## <a name="performancetesting">Performance Testing</a>
 
@@ -315,11 +315,11 @@ Responsive testing-checklist [here](.pdf)
 W3C testing completed for: index.html
 No other issues with W3C Validator on Markup except for the below resolved warnings:
 
-**Warning message**: <span class="price-container"> This was originally a span and did not allow <h3> tags to be a child inside a <span> tag this was changed to be a <div>.
+**Warning message**: `<span class="price-container">` This was originally a span and did not allow `<h3>` tags to be a child inside a `<span>` tag this was changed to be a `<div>`.
 
-**Warning message**: <span class="price-container"> This was originally a span and did not allow <p> tags to be a child inside a <span> tag this was changed to be a <div>.
+**Warning message**: `<span class="price-container">` This was originally a span and did not allow `<p>` tags to be a child inside a `<span>` tag this was changed to be a `<div>`.
 
-**Warning message**: possible misuse of arial-label in the <span id="qty" class="quantity-num" aria-label="Current Quantity"> so this was removed as it was not needed
+**Warning message**: possible misuse of arial-label in the `<span id="qty" class="quantity-num" aria-label="Current Quantity">` so this was removed as it was not needed
 
 ## <a name="csscode">CSS</a>
 
