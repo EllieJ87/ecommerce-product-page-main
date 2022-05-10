@@ -1,27 +1,8 @@
-# Frontend Mentor - E-commerce product page
-
-![Design preview for the E-commerce product page coding challenge](./design/desktop-preview.jpg)
-
-## The challenge
-
-Your challenge is to build out this e-commerce product page and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to:
-
-- View the optimal layout for the site depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Open a lightbox gallery by clicking on the large product image
-- Switch the large product image by clicking on the small thumbnail images
-- Add items to the cart
-- View the cart and remove items from it
-
 # E-commerce Product Page
 
 This is a website that I created for my final milestone project. To build an E-commerce product page.
 
-The concept for this site was to build a static one page e-commerce product page, to develop a image scroll for mobile, a pop-up light box for the destop site and have functionality to add, delete and checkout products in the cart.
+The concept for this site was to build a static one-page e-commerce product page, to develop a image scroll for mobile, a pop-up light box for the desktop site and have functionality to add, delete and checkout products in the cart.
 
 ## Showcase
 
@@ -53,16 +34,10 @@ This domain will allow you to access the E-commerce Product Page, which I have c
    - [Shopping Cart](#shoppingcart)
    - [Product Image](#productimage)
    - [Product Information](#productinformation)
-   - [Light Box](#lightbox)
-   - [Mobile Scroll](#mobilescroll)
+   - [Light Box - Desktop](#lightbox)
+   - [Mobile Scroll - Mobile](#mobilescroll)
+   - [Toast](#toast)
    - [Footer](#footerfeatures)
-   - [Onload 'Welcome Aboard'](#welcomemodal)
-   - [Audio Icon](#audioicon)
-   - [Game Play](#maingameplay)
-   - [How to Play](#howtoplaymodal)
-   - [Contact](#contactmodal)
-   - [Home](#homemodal)
-   - [End of Game](#endofgame)
 
 4. [Technologies Used](#technologies)
 
@@ -86,7 +61,7 @@ This domain will allow you to access the E-commerce Product Page, which I have c
 
 My website is for one e-commerce product page, where the user is interested in the current drop from the company 'Sneakers'. The user can see a main image, smaller images when clicked will change the main image, open a lightbox to see the image in a larger scale. Able to add as many pairs to their basket, delete the basket quantity or checkout the basket quantity.
 
-Use of white space to showcase the product and text, with a pop of orange to acent the companies main colour theme. Sublte hover navigation and movement to bring depth to the product page.
+Use of white space to showcase the product and text, with a pop of orange to accent the companies main colour theme. Subtle hover navigation and movement to bring depth to the product page.
 
 ## <a name="userstories">User Stories</a>
 
@@ -95,13 +70,13 @@ Use of white space to showcase the product and text, with a pop of orange to ace
 - I want to clearly see the picture of the product and additional images
 - I want to know the price of the product and if there is any discount on the product
 - I want to see information about the product I am buying
-- I want to know which active thumbnail image is slected
+- I want to know which active thumbnail image is selected
 
 ### <a name="allusers">All Users</a>
 
 - I want there to be a main image and smaller images to see different views of the product
-- I want to click on the thumbnail and it changes the main image to corespond to the image I clicked on
-- I want to click the main image (on destop) and a light box shows the main image and thumbnails
+- I want to click on the thumbnail and it changes the main image to correspond to the image I clicked on
+- I want to click the main image (on desktop) and a light box shows the main image and thumbnails
 - I want to click on the thumbnail images on the lightbox and this changes the main lightbox image
 - I want the arrows in the lightbox to scroll through the images and changes the active state of the thumbnails
 - I want to be able to close the lightbox image by clicking on the cross
@@ -123,10 +98,10 @@ Use of white space to showcase the product and text, with a pop of orange to ace
 
 ### <a name="fontsused">Fonts</a>
 
-For my site I choosed the font [Kumbh Sans](https://fonts.google.com/specimen/Kumbh+Sans?query=Kumbh+Sans) for the whole site theme, apart from the company titile 'Sneakers', this is a very clean font and is versite on how it looks.
+For my site I choose the font [Kumbh Sans](https://fonts.google.com/specimen/Kumbh+Sans?query=Kumbh+Sans) for the whole site theme, apart from the company title 'Sneakers', this is a very clean font and is versatile on how it looks.
 
-![Title Text](readme-docs\title-font.jpg)
-![Product Text](readme-docs\product-font.jpg)
+![Title Text](readme-docs/title-font.jpg)
+![Product Text](readme-docs/product-font.jpg)
 
 ### <a name="coloursused">Colours</a>
 
@@ -140,14 +115,14 @@ I feel this range of soft making the page very clean and ensuring the product is
 
 The wireframes were created using [Figma](https://www.figma.com) and the imagery can be found in the wireframes in jpg format.
 
-| Desktop & Laptop               | Tablet & Mobile              |
-| ------------------------------ | ---------------------------- |
-| [Index](.jpg)                  | [Index](.jpg)                |
-| [Index - Empty Cart](.jpg)     | [Index - Empty Cart](.jpg)   |
-| [Index - Product Cart](.jpg)   | [Index - Product Cart](.jpg) |
-| [Index - Lightbox](.jpg)       |                              |
-| [Index - Lightbox Hover](.jpg) |                              |
-|                                | [Index - Navbar](.jpg)       |
+| Desktop & Laptop                                                                                                                                      | Tablet & Mobile                                                                                                                                  |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [Index](https://github.com/EllieJ87/ecommerce-product-page-main/blob/master/readme-docs/wireframes/desktop-index.jpg)                                 | [Index](https://github.com/EllieJ87/ecommerce-product-page-main/blob/master/readme-docs/wireframes/mobile-index.jpg)                             |
+| [Index - Empty Cart](https://github.com/EllieJ87/ecommerce-product-page-main/blob/master/readme-docs/wireframes/desktop-index-cart-empty.jpg)         | [Index - Empty Cart](https://github.com/EllieJ87/ecommerce-product-page-main/blob/master/readme-docs/wireframes/mobile-index-cart-empty.jpg)     |
+| [Index - Product Cart](https://github.com/EllieJ87/ecommerce-product-page-main/blob/master/readme-docs/wireframes/desktop-index-cart-product.jpg)     | [Index - Product Cart](https://github.com/EllieJ87/ecommerce-product-page-main/blob/master/readme-docs/wireframes/mobile-index-cart-product.jpg) |
+| [Index - Lightbox](https://github.com/EllieJ87/ecommerce-product-page-main/blob/master/readme-docs/wireframes/desktop-index-lightbox.jpg)             |                                                                                                                                                  |
+| [Index - Lightbox Hover](https://github.com/EllieJ87/ecommerce-product-page-main/blob/master/readme-docs/wireframes/desktop-index-lightbox-hover.jpg) |                                                                                                                                                  |
+|                                                                                                                                                       | [Index - Navbar](https://github.com/EllieJ87/ecommerce-product-page-main/blob/master/readme-docs/wireframes/mobile-index-nav.jpg)                |
 
 ## <a name="featuressite">Features</a>
 
@@ -155,36 +130,97 @@ This section is a brief highlight of features that this site contains, why they 
 
 ### <a name="navbar">Navbar</a>
 
--
+- Main company logo 'Sneakers' is located on the top left of the screen
+- Links to: 'Collections', 'Men', 'Women', 'About' and 'Contact' run along next to the main company logo. (Links are not functionable)
+- All links on the desktop / Tablet layout have a subtle hover state with a strong orange colour bottom border and a bolder font weight to emphases which state is being hovered over
+- Cart Icon is on the right side of the screen with padding between the avatar logo, this is in a strong grey-blue colour taken from the colour palette
+- Cart Icon has a strong orange hover state
+- Avatar Logo, is located to the right of the cart icon and screen this has an orange border around the image.
+- Navigation has a minimalistic Line to set a clear definition on the end of the nav
+
+**Mobile Display**
+
+- Hamburger icon is visible next to the 'Sneakers' logo on the far left side
+- When hamburger icon is clicked this shows the: 'Collections', 'Men', 'Women', 'About' and 'Contact' links, this nav bar takes up half the screen width and is in solid white with a black opacity back drop.
+- Navigation links have a hover state of change colour in orange with bold text
+- Close 'X' button is in the top left of the screen to close the nav bar
+- 'X' Button has a hover state of change colour in orange
 
 ### <a name="shoppingcart">Shopping Cart</a>
 
--
+- Cart Icon has a hover state of change colour in orange
+- When Cart icon is clicked this shows the cart basket with a soft transition
+- When the cart is empty the user can see the Cart title and the text 'Your cart is empty'
+- When cart has product in, a quantity count indicator is visible to state how many items are in the cart
+- Cart quantity indicator is in an orange badge with soft borders and with white font colour
+- When cart has the product in, cart displays an image, product title, price, the quantity added, cart total price and a trash icon (to delete), these are all displayed on one line.
+- The cart has a 'Checkout' button which has the same styling and hover state as the 'Add to Cart' button, this is located underneath the product information and takes up the full width of the cart, including the same amount of padding
+- The 'Trash' icon is displayed to remove the full quantity of the products in the cart
+- The 'Checkout' button is visible to replicate the process of the item being purchased (this button does not take the user to a payment page / takes any payment it has a toast function to state this button has an action and to stimulate the elements being paid for, further backend coding / development will need to be put into place to take payments and handling this data)
+- Cart is fixed and the user is unable to scroll down the page when this is open
+- User can click outside of the cart or click the cart icon to close the cart display
 
 ### <a name="productimage">Product Image</a>
 
--
+- Main product image is located to the left of the screen and takes up half the container width, not the full width to ensure there is enough white space around the imagery and text
+- On smaller width screens to tablet size, main image is stacked on top of the thumbnails and product information text
+- Thumbnail images are displayed underneath the main image to showcase additional image shots of the product
+- Thumbnails has an active state when the user clicks on the image, image has an opacity and a strong orange border to indicate it's active state. main image changes to reflect which image is being clicked on
 
 ### <a name="productinformation">Product Information</a>
 
--
+- Company name title is at the top of the product information container, this is in orange uppercase and has letter spacing, for clear readability, font is smaller than product title
+- Product name is underneathe the company name title, font colour in black which is in larger so the user knows that this is the product title
+- Information about the product is underneath the product name in a deep mid blue colour highlighting keep descriptions about the showcased product
+- Current price in bold black larger font to indicate to the user the cost of the product which sits under the product information
+- Reduced markdown percent badge is next to the current price, this is encased in a light orange background with a strong bold orange colour to add a clear indication of a markdown percent
+- There is the original cost price which sits under the new price and reduce percent, this is in italic styling strike out in a light grey colour to show it's less importance but to be visible to the user of the old price
+- Increase and decrease buttons so the user can add or as little as they want - have a hover state - and a de-active state
+- Quantity button has a 'minus (-)' and 'plus (+)' button with the quantity number centred of the buttons
+- User can add the chose the amount they wish by clicking on the '+' or '-' button this will update the quantity number in the quantity button. This number will add that amount of products into the cart
+- '+' and '-' buttons has a hover colour change and also has a de-active state so the user knows they need to add at least 1 product to the cart
+- Both 'Add to Cart' and quantity buttons are in a row in the main container under the price information
+- 'Add to Cart' button has a box shadow and text of 'Add to Cart' is in bold when the user hovers over
 
-### <a name="lightbox">Light Box</a>
+**Mobile / Tablet Display**
 
--
+- For the mobile layout the current price, reduced price and the original price are displayed in a row on one line
+- Both 'Add to Cart' and quantity buttons are stacked, the quantity button is ontop of the 'Add to Cart' this is to ensure the user has enough screen space to select the right button option, and utilising the space more
 
-### <a name="mobilescroll">Mobile Scroll</a>
+### <a name="lightbox">Light Box - Desktop</a>
 
--
+- When the main image is clicked a light box is displayed, showing the main image, thumbnails, arrow left, arrow right and a close button
+- The user can click on the thumbnail and this changes the main product image
+- When the user clicks on either the left or right arrow this takes the user to the next or previous image
+- Thumbnail image has an active state so when the user clicks or actions the left / right arrow buttons, the thumbnail has an opacity and has a strong orange border around it
+- Both the left and right arrows has a hover state, this changes the arrow colour to orange and has slight movement by changing the position further over
+- The close button is situated in the top right of the lightbox
+- The close button has a hover state of orange to indicate the user has hover over it - this is the only way to close the lightbox
+
+### <a name="mobilescroll">Mobile Scroll - Mobile</a>
+
+- Main product is situated at the top - takes full width of the screen
+- Right and left arrows are displayed
+- When the user clicks on either the left or right arrow this takes the user to the next or previous image
+- Both the left and right arrows has a hover state, this changes the arrow colour to orange and has slight movement by changing the position further over
+- Thumbnails are hidden to minimize the amount taken on the screen
+
+### <a name="toast">Toast</a>
+
+- A small toast indication when the user, adds, removes or checkout the items in the cart
+- This is located to the right of the screen, same position as the cart with a transition on it
+- Has an orange background colour with bold white font
+- When the user clicks the 'Add to Cart' button the number added is displayed in the toast with the text 'Added to Cart'
+- When the user clicks the 'Trash' icon the toast with the text 'items removed from cart' is displayed
+- When the user clicks the 'Checkout' button the toast with the text 'Thank you for your Purchase' is displayed
 
 ### <a name="footerfeatures">Footer</a>
 
 - Contains the copyright text, this is in the right side of the page this then is centred and on top of the navigation links in smaller screens for easy readability.
-- Contains the 'Audio', 'Home', 'Contact', ‘Question’ (How to Play), ‘LinkedIn’ and ‘GitHub’ navigation links on the left side of the page and evenly spaced these and then stacked underneath the header title, these are all centred to the width of the screen
-- All navigation links have an animation and a colour change when the user hover over the icon, this is so the user knows they are interactive and have a purpose
+- Contains the ‘LinkedIn’ and ‘GitHub’ navigation links on the left side of the page and evenly spaced these and then stacked underneath the header title, these are all centred to the width of the screen
+- All navigation links have a colour change when the user hover over the icon, this is so the user knows they are interactive and have a purpose
 - The ‘LinkedIn’ and ‘GitHub’ icons opens a new window to the relevant page
 - The footer runs along and is fixed at the bottom with no fill colour to make this easy to read and visual appealing
-- The colour scheme is to be reflective of the colour palette and to be easy to see
 
 ## <a name="technologies">Technologies Used</a>
 
@@ -227,7 +263,7 @@ Google Chrome Dev Tools
 [SCSS](https://en.wikipedia.org/wiki/CSS)
 
 - The project uses SCSS/SASS to apply the custom styles to create the look of the site. The index.html file is linked directly to the style.css stylesheet
-- SCSS also enabled me to creat re-usable variables and to keep areas of the site separate to make this easier to target and navigate when changing the styling.
+- SCSS also enabled me to create re-usable variables and to keep areas of the site separate to make this easier to target and navigate when changing the styling.
 
 [Visual Studio Code](https://code.visualstudio.com)
 
@@ -247,13 +283,9 @@ Google Chrome Dev Tools
 
 Testing can be found [here](TESTING.md)
 
-//
-
 ## <a name="implementationtest">Implementation</a>
 
-As this is my first time building a fully responsive website, so coding and using Git was very new to me, trying to identify and resolve why issues were happening was a long process to fully understand and resolve. I do like to problem solve and research different methods to try and resolve the issues that I was facing. To do this I would mainly use Dev Tools in Google Chrome. By using elements of Bootstrap, mainly for the modals and to have prefixed padding, the main site was built using css grid and this was a new styling feature for me to learn. Understand how to manipulate the grid elements and to set this based on different screen sizes was very interesting to learn and understand the concept behind it. When testing I would use a combination of removing elements style by style to fully understand what this was targeting and how these effected the style and page layouts, this enable me to see what worked and did not work to my required aesthetic.
-
-//
+As this is my first time building a e-commerce product page, learning a lot from my previous projects has pushed my skills with Scss and JavaScript more as this is more a reflection on how web pages are structured. I do like to problem solve and research different methods to try and resolve the issues that I was facing. To do this I would mainly use Dev Tools in Google Chrome. By using elements of Bootstrap, was the foundation to ensure this project was responsive, but I used a lot of my own custom Scss to ensure the styling was coherent to the brief, especially ensuring the screen size dimensions were a different and device friendly layout. When testing I would use a combination of isolating he chosen areas and focus on that part, which became tricky when putting them onto the main site to ensure they worked to how these have been tested.
 
 ## <a name="deploymentsite">Deployment</a>
 
@@ -287,7 +319,6 @@ To run my code locally, users can download a local copy of my code to their desk
 - [Font Awesome](https://fontawesome.com/v4.7/) for the many icons that I have used throughout the various pages
 - [Bootstrap](https://getbootstrap.com) We have had fun along the way, but overall, for your superb features that you provide to enabled me to add in without having to code too much myself, although there was quite a bit of tinkering with the CSS, but we're still friends
 - Shout out to [JavaScript](https://en.wikipedia.org/wiki/JavaScript) where I spent most days, mornings and nights seeing if I could tackle you or not!
-- All media work has been drawn / sketched by myself for the sole purpose to showcase my skills and creating a fun experience
 
 ## <a name="contentsite">Content</a>
 
@@ -304,3 +335,7 @@ I would also like to thank the [Stack Overflow](https://stackoverflow.com) and [
 I promise one day I will revisit this site once I have finished this course to keep pushing the limits to further add new exciting elements to this project to go above and beyond!
 
 _**Created by Ellie Judge**_
+
+sneakers logo is sitting up
+cart opsition on desktop
+toast position on desktop

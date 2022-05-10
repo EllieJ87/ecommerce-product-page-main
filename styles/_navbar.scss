@@ -15,7 +15,7 @@
     // ---------- NAVBAR - MOBILE NAV ---------- //
     #bars {
       font-size: $SmallEM;
-      color: $Dark_Navy;
+      color: $Black;
     }
 
     #close-btn {
@@ -25,7 +25,7 @@
     
     .xmark {
       font-size: 2em; 
-      color: $Dark_Navy;
+      color: $Black;
 
       &:hover {
         color: $Orange;
@@ -76,7 +76,7 @@
 
   .shopping-cart-button {
     cursor: pointer;
-    color: $Dark_Navy;
+    color: $Black;
 
     &:hover {
       color: $Orange;
@@ -116,7 +116,7 @@
 // ---------- NAVBAR - CART BASKET ---------- //
 .producstOnCart {
 	top: 60px;
-	right: 18%;
+	right: 30px;
 	background-color: $White;
 	width: 375px;
 	height: 240px;

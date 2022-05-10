@@ -17,7 +17,9 @@
       .mobile-nav { 
         @include FlexCenterAlign(); 
         
-        .header-img { padding-bottom: $ZeroPX; }
+        .header-img { 
+          padding-bottom: $ZeroPX!important; 
+        }
       }
       
       .navbar-cart { 
@@ -56,13 +58,9 @@
     }
   }
 
-  .toast-container {
-    right: 0;
-  }
-
   .producstOnCart {
     right: 20px;
-    width: 85vw;
+    width: 90vw;
     position: fixed;
   
     .top {

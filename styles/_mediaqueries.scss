@@ -1,16 +1,14 @@
-// ---------- MEDIA QUERIES ---------- //
+@media (min-width: 1900px) {
+  .producstOnCart {
+    right: 25rem;
+  }
+}
+
+
 @media (max-width: 991px) {
   
   .product {
     margin-top: 100px;
-  }
-  
-  .toast-container {
-    right: 5%;
-  }
-  
-  .producstOnCart { 
-    right: 5%; 
   }
 
   .product-image-container { 
@@ -75,13 +73,17 @@
 
   .navbar { 
     padding-bottom: $TenPX; 
+
+    .header-img {
+      padding-bottom: $TenPX!important;
+    }
     
     .cart-qnty {
       padding: 0 10px 10px 0;
     }
     
     .avatar-logo  {
-      padding-bottom: 10px;
+      padding-bottom: $TenPX;
     }
   }
 
