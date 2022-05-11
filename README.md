@@ -2,11 +2,11 @@
 
 This is a website that I created for my final milestone project. To build an E-commerce product page.
 
-The concept for this site was to build a static one-page e-commerce product page, to develop a image scroll for mobile, a pop-up light box for the desktop site and have functionality to add, delete and checkout products in the cart.
+The concept for this site was to build a static one-page e-commerce product page, featuring an image carousel for mobile, a pop-up light box for the desktop, with a functional shopping cart abling the user to add, delete and checkout products that are displayed in the cart.
 
 ## Showcase
 
-![E-commerce Product Page](readme-docs/responsive.jpg) // To change file link
+![E-commerce Product Page](readme-docs/responsive.jpg)
 
 A deployed version of my website can be found [here](https://elliej87.github.io/ecommerce-product-page-main/)
 
@@ -35,7 +35,7 @@ This domain will allow you to access the E-commerce Product Page, which I have c
    - [Product Image](#productimage)
    - [Product Information](#productinformation)
    - [Light Box - Desktop](#lightbox)
-   - [Mobile Scroll - Mobile](#mobilescroll)
+   - [Product Image Carousel - Mobile](#mobilecarousel)
    - [Toast](#toast)
    - [Footer](#footerfeatures)
 
@@ -59,9 +59,9 @@ This domain will allow you to access the E-commerce Product Page, which I have c
 
 ## <a name="userexperienceuX">UX (User Experience)</a>
 
-My website is for one e-commerce product page, where the user is interested in the current drop from the company 'Sneakers'. The user can see a main image, smaller images when clicked will change the main image, open a lightbox to see the image in a larger scale. Able to add as many pairs to their basket, delete the basket quantity or checkout the basket quantity.
+My website is for an E-commerce Product Page, where the user is interested in the current drop from the company 'Sneakers'. The user can see a main image, smaller thumbnail images where when the user clicks on them will change the main image, open a lightbox to see the image in a larger scale. Able to add as many pairs to their basket, delete the basket quantity or checkout the basket quantity.
 
-Use of white space to showcase the product and text, with a pop of orange to accent the companies main colour theme. Subtle hover navigation and movement to bring depth to the product page.
+The use of white space to showcase the product imagery and text, with a pop of orange to accent the companies main colour theme. Subtle hover navigation and movement to bring depth to the product page.
 
 ## <a name="userstories">User Stories</a>
 
@@ -78,10 +78,10 @@ Use of white space to showcase the product and text, with a pop of orange to acc
 - I want to click on the thumbnail and it changes the main image to correspond to the image I clicked on
 - I want to click the main image (on desktop) and a light box shows the main image and thumbnails
 - I want to click on the thumbnail images on the lightbox and this changes the main lightbox image
-- I want the arrows in the lightbox to scroll through the images and changes the active state of the thumbnails
-- I want to be able to close the lightbox image by clicking on the cross
-- I want the mobile display to have just 1 image and to be able to scroll through the thumbnail images without being show on the mobile screen
-- I want to add the product to the cart, by clicking the plus sign adds the amount stated to the cart
+- I want the arrows in the lightbox to carousel through the images and changes the active state of the thumbnails
+- I want to be able to close the lightbox image by clicking on the 'X' button
+- I want the mobile display to have just 1 image and to be able to carousel through the thumbnail images, the thumbnail images are not shown on the mobile screen
+- I want to add the product to the cart, by clicking the plus sign and clicking the 'Add to Cart' button will add the amount stated to the cart
 - I want to see if the cart is either empty or has the product added to the cart
 - I want to be able to delete all items in the cart
 - I want to be able to checkout the items in the cart
@@ -105,11 +105,11 @@ For my site I choose the font [Kumbh Sans](https://fonts.google.com/specimen/Kum
 
 ### <a name="coloursused">Colours</a>
 
-For the colours, I wanted this to be clean and soft, with one main accent colour. With a white background and soft greys so it's not too harsh, this adds depth to the page and places a sense of hierarchy within the page. With the accent colour of orange this features on: the buttons, titles and accents of hover states on the links, cart, avatar and border for the thumbnails with a slight white opacity.
+For the colours, I wanted this to be clean and soft, with one main accent colour. Having a white background and soft greys it's not too harsh, this adds depth to the page and places a sense of hierarchy within the page. With the accent colour of orange this features on: the buttons, titles and accents of hover states on the links, cart, avatar and border for the thumbnails with a slight white opacity.
 
 ![Colour Palette](readme-docs/colours.jpg)
 
-I feel this range of soft making the page very clean and ensuring the product is the main feature of the page.
+I feel this range of soft colours makes the page very clean and ensures the product is the main feature of the page.
 
 ### <a name="wireframesboards">Wireframes</a>
 
@@ -132,11 +132,11 @@ This section is a brief highlight of features that this site contains, why they 
 
 - Main company logo 'Sneakers' is located on the top left of the screen
 - Links to: 'Collections', 'Men', 'Women', 'About' and 'Contact' run along next to the main company logo. (Links are not functionable)
-- All links on the desktop / Tablet layout have a subtle hover state with a strong orange colour bottom border and a bolder font weight to emphases which state is being hovered over
-- Cart Icon is on the right side of the screen with padding between the avatar logo, this is in a strong grey-blue colour taken from the colour palette
+- All links on the desktop / Tablet layout have a subtle hover state with a strong orange colour bottom border and a bolder font weight to emphases when the element is being hovered over
+- Cart icon is on the right side of the screen with padding between the avatar logo, this is in a strong grey-blue colour taken from the colour palette
 - Cart Icon has a strong orange hover state
-- Avatar Logo, is located to the right of the cart icon and screen this has an orange border around the image.
-- Navigation has a minimalistic Line to set a clear definition on the end of the nav
+- Avatar Logo, is located to the far right of the screen and to the right of the cart icon, this has an orange border around the image when the user hovers hover this image
+- Navigation has a minimalistic bottom border to set a clear definition on the end of the navigation area
 
 **Mobile Display**
 
@@ -148,11 +148,11 @@ This section is a brief highlight of features that this site contains, why they 
 
 ### <a name="shoppingcart">Shopping Cart</a>
 
-- Cart Icon has a hover state of change colour in orange
+- Cart icon has a hover state of change colour in orange
 - When Cart icon is clicked this shows the cart basket with a soft transition
 - When the cart is empty the user can see the Cart title and the text 'Your cart is empty'
 - When cart has product in, a quantity count indicator is visible to state how many items are in the cart
-- Cart quantity indicator is in an orange badge with soft borders and with white font colour
+- Cart quantity indicator is placed to the right and slightly above the cart icon, this is in an orange background with soft borders and with white bold font colour
 - When cart has the product in, cart displays an image, product title, price, the quantity added, cart total price and a trash icon (to delete), these are all displayed on one line.
 - The cart has a 'Checkout' button which has the same styling and hover state as the 'Add to Cart' button, this is located underneath the product information and takes up the full width of the cart, including the same amount of padding
 - The 'Trash' icon is displayed to remove the full quantity of the products in the cart
@@ -163,22 +163,22 @@ This section is a brief highlight of features that this site contains, why they 
 ### <a name="productimage">Product Image</a>
 
 - Main product image is located to the left of the screen and takes up half the container width, not the full width to ensure there is enough white space around the imagery and text
-- On smaller width screens to tablet size, main image is stacked on top of the thumbnails and product information text
+- On smaller width screens to tablet size, main image is stacked on top of the thumbnails and product information
 - Thumbnail images are displayed underneath the main image to showcase additional image shots of the product
 - Thumbnails has an active state when the user clicks on the image, image has an opacity and a strong orange border to indicate it's active state. main image changes to reflect which image is being clicked on
 
 ### <a name="productinformation">Product Information</a>
 
-- Company name title is at the top of the product information container, this is in orange uppercase and has letter spacing, for clear readability, font is smaller than product title
-- Product name is underneathe the company name title, font colour in black which is in larger so the user knows that this is the product title
-- Information about the product is underneath the product name in a deep mid blue colour highlighting keep descriptions about the showcased product
-- Current price in bold black larger font to indicate to the user the cost of the product which sits under the product information
+- Company name title is at the top of the product information container, this is in orange uppercase and has letter spacing, for clear readability, font is smaller than product name
+- Product name is underneath the company name title, font colour in black which is in larger so the user knows that this is the product name
+- Information about the product is underneath the product name in a deep mid blue colour highlighting key descriptions about the showcased product
+- Current price in bold black larger font to indicating to the user the cost of the product which sits under the product information
 - Reduced markdown percent badge is next to the current price, this is encased in a light orange background with a strong bold orange colour to add a clear indication of a markdown percent
 - There is the original cost price which sits under the new price and reduce percent, this is in italic styling strike out in a light grey colour to show it's less importance but to be visible to the user of the old price
-- Increase and decrease buttons so the user can add or as little as they want - have a hover state - and a de-active state
+- Increase and decrease buttons so the user can add or as little as they want, this includes a hover feature and a de-active state
 - Quantity button has a 'minus (-)' and 'plus (+)' button with the quantity number centred of the buttons
-- User can add the chose the amount they wish by clicking on the '+' or '-' button this will update the quantity number in the quantity button. This number will add that amount of products into the cart
-- '+' and '-' buttons has a hover colour change and also has a de-active state so the user knows they need to add at least 1 product to the cart
+- User can add the amount they wish by clicking on the '+' or '-' button this will update the quantity number in the quantity button. This number will add that amount of products into the cart
+- The '+' and '-' buttons has a hover colour change and also has a de-active state so the user knows they need to add at least 1 product to the cart
 - Both 'Add to Cart' and quantity buttons are in a row in the main container under the price information
 - 'Add to Cart' button has a box shadow and text of 'Add to Cart' is in bold when the user hovers over
 
@@ -192,12 +192,12 @@ This section is a brief highlight of features that this site contains, why they 
 - When the main image is clicked a light box is displayed, showing the main image, thumbnails, arrow left, arrow right and a close button
 - The user can click on the thumbnail and this changes the main product image
 - When the user clicks on either the left or right arrow this takes the user to the next or previous image
-- Thumbnail image has an active state so when the user clicks or actions the left / right arrow buttons, the thumbnail has an opacity and has a strong orange border around it
+- Thumbnail image has an active state so when the user clicks or actions the left / right arrow buttons, the thumbnail has an opacity with a strong orange border around it
 - Both the left and right arrows has a hover state, this changes the arrow colour to orange and has slight movement by changing the position further over
 - The close button is situated in the top right of the lightbox
 - The close button has a hover state of orange to indicate the user has hover over it - this is the only way to close the lightbox
 
-### <a name="mobilescroll">Mobile Scroll - Mobile</a>
+### <a name="mobilecarousel">Product Image Carousel - Mobile</a>
 
 - Main product is situated at the top - takes full width of the screen
 - Right and left arrows are displayed
@@ -211,7 +211,7 @@ This section is a brief highlight of features that this site contains, why they 
 - This is located to the right of the screen, same position as the cart with a transition on it
 - Has an orange background colour with bold white font
 - When the user clicks the 'Add to Cart' button the number added is displayed in the toast with the text 'Added to Cart'
-- When the user clicks the 'Trash' icon the toast with the text 'items removed from cart' is displayed
+- When the user clicks the 'Trash' icon the toast with the text 'Items removed from Cart' is displayed
 - When the user clicks the 'Checkout' button the toast with the text 'Thank you for your Purchase' is displayed
 
 ### <a name="footerfeatures">Footer</a>
@@ -226,15 +226,15 @@ This section is a brief highlight of features that this site contains, why they 
 
 [Bootstrap](https://getbootstrap.com)
 
-- The project uses the Bootstrap framework to add a responsive grid system, prebuilt components, plugins built on jQuery, and Bootstrap styles to my game, before adding my own custom styling
+- The project uses the Bootstrap framework to add a responsive feel to my site, using prebuilt components like the off canvas navigation, plugins built with jQuery, including adding my own custom styling to help acheive the styling I wanted for my site.
 
 [CSS](https://en.wikipedia.org/wiki/CSS)
 
-- The project uses CSS to apply the custom styles to create the look of my game. The index.html file is linked directly to the main.css stylesheet
+- The project uses CSS to apply the custom styles to create the look of E-commerce Product Page site. The index.html file is linked directly to the style.css stylesheet.
 
 [Figma](https://www.figma.com)
 
-- I used Figma to design the wire frames for the site
+- I used Figma to design the wire frames for this site, this was my first time using it professionally there are many areas I would like to work on with Figma, including hover states and animations to my wireframes.
 
 [Font Awesome](https://fontawesome.com/v4.7/)
 
@@ -246,7 +246,7 @@ Google Chrome Dev Tools
 
 [Google Fonts](https://fonts.google.com)
 
-- Google fonts was used to import ‘Orbiton font and ‘Sarpanch’ into the HTML which is used on all pages throughout the project.
+- Google fonts was used to import ‘Kumbh Sans’ into the SCSS / CSS which is used on all pages throughout the project.
 
 [HTML5](https://en.wikipedia.org/wiki/HTML5)
 
@@ -254,15 +254,15 @@ Google Chrome Dev Tools
 
 [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 
-- The project uses JavaScript from my custom script.js file to add functionality and interactivity to my text adventure game. This is the core focus of this project. The project also uses JavaScript from Bootstrap which is required to add functionality to the Bootstrap modal
+- The project uses JavaScript from my custom script.js file and shopping-cart.js file this was to add functionality and interactivity to my site. These enables the user to open up the lightbox, have an image carousel on both the mobile and lightbox styling. This also has the functionality to be able to add, delete and purchase the items into the shopping cart.
 
 [jQuery](https://en.wikipedia.org/wiki/JQuery)
 
-- The project uses jQuery to simplify DOM manipulation. This is both the standard jQuery that is built with Bootstrap components, and my custom jQuery used in my index.html and script.js files
+- This is both the standard jQuery that is built with Bootstrap components
 
 [SCSS](https://en.wikipedia.org/wiki/CSS)
 
-- The project uses SCSS/SASS to apply the custom styles to create the look of the site. The index.html file is linked directly to the style.css stylesheet
+- The project uses SCSS to apply the custom styles to create the look of the site. The index.html file is linked directly to the CSS stylesheet.
 - SCSS also enabled me to create re-usable variables and to keep areas of the site separate to make this easier to target and navigate when changing the styling.
 
 [Visual Studio Code](https://code.visualstudio.com)
@@ -285,7 +285,7 @@ Testing can be found [here](TESTING.md)
 
 ## <a name="implementationtest">Implementation</a>
 
-As this is my first time building a e-commerce product page, learning a lot from my previous projects has pushed my skills with Scss and JavaScript more as this is more a reflection on how web pages are structured. I do like to problem solve and research different methods to try and resolve the issues that I was facing. To do this I would mainly use Dev Tools in Google Chrome. By using elements of Bootstrap, was the foundation to ensure this project was responsive, but I used a lot of my own custom Scss to ensure the styling was coherent to the brief, especially ensuring the screen size dimensions were a different and device friendly layout. When testing I would use a combination of isolating he chosen areas and focus on that part, which became tricky when putting them onto the main site to ensure they worked to how these have been tested.
+As this is my first time building a e-commerce product page, learning a lot from my previous projects has pushed my skills with SCSS and JavaScript more as this is more a reflection on how web pages are structured. I do like to problem solve and research different methods to try and resolve the issues that I was facing. To do this I would mainly use Dev Tools in Google Chrome. By using elements of Bootstrap, was the foundation to ensure this project was responsive, but I used a lot of my own custom SCSS to ensure the styling was coherent to the brief, especially ensuring the screen size dimensions were a different and device friendly layout. When testing I would use a combination of isolating the chosen areas and focus on that part, which became tricky when putting them onto the main site to ensure they worked to how these have been tested.
 
 ## <a name="deploymentsite">Deployment</a>
 
@@ -335,7 +335,3 @@ I would also like to thank the [Stack Overflow](https://stackoverflow.com) and [
 I promise one day I will revisit this site once I have finished this course to keep pushing the limits to further add new exciting elements to this project to go above and beyond!
 
 _**Created by Ellie Judge**_
-
-sneakers logo is sitting up
-cart opsition on desktop
-toast position on desktop

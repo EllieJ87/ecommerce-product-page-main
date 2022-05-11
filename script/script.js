@@ -50,7 +50,7 @@ setMainImage = (imageIndex) => {
 }
 
 MainImageClick = () => {
-  if (window.innerWidth >= 800) {
+  if (window.innerWidth >= 1400) {
     if (lightBoxOverlay.childElementCount == 1) {
       const newLightbox = mainImagesContainer.cloneNode(true)
       lightBoxOverlay.appendChild(newLightbox)
